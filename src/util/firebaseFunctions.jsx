@@ -3,7 +3,6 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import {
   collection,
   addDoc,
-  setDoc,
   doc,
   getDocs,
   deleteDoc,

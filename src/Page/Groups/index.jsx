@@ -8,7 +8,6 @@ import {
   DialogActions,
   Fab,
   IconButton,
-  Toolbar,
   Menu,
   MenuItem,
   Dialog,
@@ -18,7 +17,6 @@ import {
   TextField,
   Button,
   ListItemText,
-  Typography,
   ListItemIcon,
 } from '@mui/material';
 
@@ -29,14 +27,12 @@ import { db } from '../../firebaseSetup';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 // Style
 import './index.css';
 import { getAuth } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router';
-import Link from '@mui/material/Link';
 
 const AddGroup = (props) => {
   const { enqueueSnackbar } = useSnackbar();
