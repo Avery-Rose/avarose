@@ -1,0 +1,33 @@
+.groups {
+  padding: 20px;
+  text-align: center;
+
+  
+  width: 100%;
+  max-width: 100%;
+
+  // desktop
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+
+
+
+  .group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+
+    .group__name {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

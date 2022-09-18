@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka+One&family=Passion+One:wght@400;700&family=Press+Start+2P&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #202020;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: #202020;
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: #202020;
+  overflow: auto;
+  font-size: 2rem;
+  font-family: 'Passion One';
+  color: #fff;
+
+  overflow: hidden;
+  
+
+  header {
+    height: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+
+  main {
+    position: absolute;
+    top: 64px;
+    bottom: 6vh;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    padding: 1.5rem;
+  }
+
+  footer {
+    height: 6vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Press Start 2P';
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  margin: 0;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
