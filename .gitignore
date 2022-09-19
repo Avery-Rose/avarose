@@ -27,6 +27,10 @@ yarn-error.log*
 // Lock files 
 yarn.lock
 package-lock.json
+/package-lock.json
+*.css.map
+*.css
+
 
 // Build files
 build/

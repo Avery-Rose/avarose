@@ -1,1 +1,19 @@
-/*# sourceMappingURL=index.css.map */
+@charset "UTF-8";
+.heart {
+  color: red;
+  text-shadow: 0 0 1rem red;
+}
+
+.firebase {
+  color: #ffca28;
+}
+.firebase::after {
+  content: " 🔥";
+}
+
+.react {
+  color: #61dafb;
+}
+.react::after {
+  content: " ⚛️";
+}/*# sourceMappingURL=index.css.map */

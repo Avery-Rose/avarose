@@ -1,0 +1,20 @@
+.heart {
+  color: red;
+  text-shadow: 0 0 1rem red;
+}
+
+.firebase {
+  color: #ffca28;
+
+  &::after {
+    content: ' 🔥';
+  }
+}
+
+.react {
+  color: #61dafb;
+
+  &::after {
+    content: ' ⚛️';
+  }
+}
