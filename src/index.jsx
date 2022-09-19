@@ -12,7 +12,7 @@ import { SnackbarProvider } from 'notistack';
 import BottomNav from './components/BottomNav';
 
 import Router from './components/Router';
-import { GoogleAuthProvider } from 'firebase/auth';
+// import { GoogleAuthProvider } from 'firebase/auth';
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = React.useState(null);

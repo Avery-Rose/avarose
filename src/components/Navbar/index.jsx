@@ -54,7 +54,7 @@ const Navbar = () => {
     );
   };
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   const [, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

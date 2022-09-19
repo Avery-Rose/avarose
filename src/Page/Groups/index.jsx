@@ -129,7 +129,7 @@ const AddGroup = (props) => {
 const Groups = () => {
   const auth = getAuth();
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   const [groups, loading, error] = useCollection(collection(db, 'groups'), {
     snapshotListenOptions: {
