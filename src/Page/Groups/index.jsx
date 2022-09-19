@@ -32,7 +32,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 // Style
 import './index.css';
 import { getAuth } from 'firebase/auth';
-import { useLocation, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const AddGroup = (props) => {
   const { enqueueSnackbar } = useSnackbar();

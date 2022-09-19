@@ -20,7 +20,7 @@ import { logout, signInWithGoogle } from '../../util/firebaseFunctions';
 // react icons
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useSnackbar } from 'notistack';
-import { useLocation, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
