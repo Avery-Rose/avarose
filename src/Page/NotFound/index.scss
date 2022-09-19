@@ -1,0 +1,57 @@
+.lost-container {
+  height: 100%;
+  
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 4em;
+  }
+
+  p {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+
+  p, h1 {
+    animation: lost-animation 5s ease-in-out infinite alternate;
+  }
+}
+
+
+@keyframes lost-animation {
+  0% {
+    text-shadow: 0 0 0.5rem rgb(255, 104, 242)
+  }
+  15% {
+    text-shadow: 0 0 0.5rem rgb(255, 104, 137)
+  }
+
+  25% {
+    text-shadow: 0 0 0.5rem rgb(255, 237, 104)
+  }
+
+  50% {
+    text-shadow: 0 0 0.5rem rgb(119, 255, 104)
+  }
+
+  75% {
+    text-shadow: 0 0 0.5rem rgb(104, 255, 222)
+  }
+
+  100% {
+    text-shadow: 0 0 0.5rem rgb(127, 104, 255)
+  }
+}

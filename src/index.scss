@@ -92,14 +92,16 @@ body {
 }
 
 .logo {
-  font-family: 'Press Start 2P';
-  font-size: 1rem;
+  transition: all 0.1s ease;
+
+  font-family: 'Fredoka One';
+  font-size: 1.2rem;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #202020;
   margin: 0;
   padding: 0;
 
   &:hover {
-    text-decoration: underline;
+    color: #ff67f2;
   }
 }
