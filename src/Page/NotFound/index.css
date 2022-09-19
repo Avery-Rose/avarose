@@ -1,0 +1,68 @@
+.lost-container {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lost-container h1 {
+  font-size: 4em;
+}
+.lost-container p {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .lost-container h1 {
+    font-size: 2em;
+  }
+  .lost-container p {
+    font-size: 1em;
+  }
+}
+.lost-container p, .lost-container h1 {
+  -webkit-animation: lost-animation 5s ease-in-out infinite alternate;
+          animation: lost-animation 5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes lost-animation {
+  0% {
+    text-shadow: 0 0 0.5rem rgb(255, 104, 242);
+  }
+  15% {
+    text-shadow: 0 0 0.5rem rgb(255, 104, 137);
+  }
+  25% {
+    text-shadow: 0 0 0.5rem rgb(255, 237, 104);
+  }
+  50% {
+    text-shadow: 0 0 0.5rem rgb(119, 255, 104);
+  }
+  75% {
+    text-shadow: 0 0 0.5rem rgb(104, 255, 222);
+  }
+  100% {
+    text-shadow: 0 0 0.5rem rgb(127, 104, 255);
+  }
+}
+
+@keyframes lost-animation {
+  0% {
+    text-shadow: 0 0 0.5rem rgb(255, 104, 242);
+  }
+  15% {
+    text-shadow: 0 0 0.5rem rgb(255, 104, 137);
+  }
+  25% {
+    text-shadow: 0 0 0.5rem rgb(255, 237, 104);
+  }
+  50% {
+    text-shadow: 0 0 0.5rem rgb(119, 255, 104);
+  }
+  75% {
+    text-shadow: 0 0 0.5rem rgb(104, 255, 222);
+  }
+  100% {
+    text-shadow: 0 0 0.5rem rgb(127, 104, 255);
+  }
+}/*# sourceMappingURL=index.css.map */
