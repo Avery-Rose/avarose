@@ -48,6 +48,7 @@ body {
 }
 body header {
   height: 64px;
+  max-height: 64px;
   position: absolute;
   top: 0;
   left: 0;
@@ -57,14 +58,14 @@ body header {
 body main {
   position: absolute;
   top: 64px;
-  bottom: 6vh;
+  bottom: 50px;
   left: 0;
   right: 0;
   overflow: auto;
   padding: 1.5rem;
 }
 body footer {
-  height: 6vh;
+  height: 56px;
   position: absolute;
   bottom: 0;
   left: 0;
