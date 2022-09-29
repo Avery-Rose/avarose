@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { Emoji } from '../Interface/Emoji';
-import { Button } from 'react-bootstrap';
 
 const EmojiCard = ({ emoji, code, description, color }: Emoji) => {
   return (
