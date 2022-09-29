@@ -10,13 +10,25 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "firebase": "^9.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-firestore": "^1.0.1",
     "react-scripts": "5.0.1",
+    "react-icons": "^4.4.0",
+    "react-router": "^6.4.0",
+    "react-router-dom": "^6.4.0",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-plugin-react": "^7.31.8",
+    "prettier": "^2.7.1"
+  },
   "scripts": {
+    "preinstall": "npx only-allow yarn",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

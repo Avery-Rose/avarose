@@ -1,0 +1,314 @@
+import { useContext } from 'react';
+import { Color } from './Color';
+import { NotificationContext } from './NotificationContext';
+
+const CopyButton = ({ emoji }: { emoji: Emoji }) => {
+  const { add, list } = useContext(NotificationContext);
+
+  const generateId = () => {
+    return Math.round(list.length + Math.random() * Date.now());
+  };
+
+  const handleClick = () => {
+    navigator.clipboard.writeText(emoji.toString());
+    console.log(add);
+    add({
+      id: generateId(),
+      message: `${emoji.toString()} was copied to your clipboard.`,
+      type: 'success',
+    });
+  };
+
+  return (
+    <button className='emoji' onClick={handleClick}>
+      {emoji.toString()}
+    </button>
+  );
+};
+
+class Emoji {
+  emoji: string;
+  name: string;
+  color: Color;
+  description?: string;
+  constructor(emoji: string, name: string, color: Color, description?: string) {
+    this.emoji = emoji;
+    this.name = name;
+    this.color = color;
+    this.description = description;
+  }
+
+  includes(filter: string): boolean {
+    return Boolean(
+      this.emoji.includes(filter) ||
+        this.name.includes(filter) ||
+        (this.description && this.description.includes(filter))
+    );
+  }
+
+  toString(): string {
+    return this.emoji;
+  }
+
+  getGradient(): string {
+    const lightGradient = `linear-gradient(135deg, rgba(255,255,255,1) 0%, ${this.color} 100%)`;
+
+    return lightGradient;
+  }
+
+  toCard(): JSX.Element {
+    return (
+      <div className='emoji-card'>
+        <div
+          className='emoji-card-header'
+          style={{
+            backgroundColor: this.color,
+            backgroundImage: this.getGradient(),
+          }}>
+          <CopyButton emoji={this} />
+        </div>
+        <div className='emoji-card-body'>
+          <h2>{this.name}</h2>
+          <p>{this.description}</p>
+        </div>
+      </div>
+    );
+  }
+}
+
+export const emojis: Emoji[] = [
+  new Emoji(
+    '🎨',
+    ':art:',
+    Color.Red,
+    'Improve structure / format of the code.'
+  ),
+  new Emoji('⚡️', ':zap:', Color.Orange, 'Improve performance.'),
+  new Emoji('🔥', ':fire:', Color.Yellow, 'Remove code or files.'),
+  new Emoji('🐛', ':bug:', Color.Green, 'Fix a bug.'),
+  new Emoji('🚑', ':ambulance:', Color.Blue, 'Critical hotfix.'),
+  new Emoji('✨', ':sparkles:', Color.Purple, 'Introduce new features.'),
+  new Emoji('📝', ':memo:', Color.Pink, 'Add or update documentation.'),
+  new Emoji('🚀', ':rocket:', Color.White, 'Deploy stuff.'),
+  new Emoji(
+    '💄',
+    ':lipstick:',
+    Color.Blue,
+    'Add or update the UI and style files.'
+  ),
+  new Emoji('🎉', ':tada:', Color.White, 'Begin a project.'),
+  new Emoji(
+    '✅',
+    ':white_check_mark:',
+    Color.Green,
+    'Add, update, or pass tests.'
+  ),
+  new Emoji('🔒', ':lock:', Color.Red, 'Fix security issues.'),
+  new Emoji(
+    '🔐',
+    ':closed_lock_with_key:',
+    Color.Orange,
+    'Add or update secrets.'
+  ),
+  new Emoji('🔖', ':bookmark:', Color.Yellow, 'Release / Version tags.'),
+  new Emoji(
+    '🚨',
+    ':rotating_light:',
+    Color.Green,
+    'Fix compiler / Remove linter warnings.'
+  ),
+  new Emoji('🚧', ':construction:', Color.Blue, 'Work in progress.'),
+  new Emoji('💚', ':green_heart:', Color.Purple, 'Fix CI Build.'),
+  new Emoji('⬇️', ':arrow_down:', Color.Pink, 'Downgrade dependencies.'),
+  new Emoji('⬆️', ':arrow_up:', Color.Blue, 'Upgrade dependencies.'),
+  new Emoji(
+    '📌',
+    ':pushpin:',
+    Color.Red,
+    'Pin dependencies to specific versions.'
+  ),
+  new Emoji(
+    '👷',
+    ':construction_worker:',
+    Color.White,
+    'Add or update CI build system.'
+  ),
+  new Emoji(
+    '📈',
+    ':chart_with_upwards_trend:',
+    Color.White,
+    'Add or update analytics or track code.'
+  ),
+  new Emoji('♻️', ':recycle:', Color.Red, 'Refactor code.'),
+  new Emoji('➕', ':heavy_plus_sign:', Color.Orange, 'Add a dependency.'),
+  new Emoji('➖', ':heavy_minus_sign:', Color.Yellow, 'Remove a dependency.'),
+  new Emoji(
+    '🔧',
+    ':wrench:',
+    Color.Green,
+    'Add or update configuration files.'
+  ),
+  new Emoji('🔨', ':hammer:', Color.Blue, 'Add or update development scripts.'),
+  new Emoji(
+    '🌐',
+    ':globe_with_meridians:',
+    Color.Purple,
+    'Internationalization and localization.'
+  ),
+  new Emoji('✏️', ':pencil2:', Color.Pink, 'Fix typos.'),
+  new Emoji(
+    '💩',
+    ':poop:',
+    Color.White,
+    'Write bad code that needs to be improved.'
+  ),
+  new Emoji('⏪', ':rewind:', Color.Blue, 'Revert changes.'),
+  new Emoji(
+    '🔀',
+    ':twisted_rightwards_arrows:',
+    Color.White,
+    'Merge branches.'
+  ),
+  new Emoji(
+    '📦',
+    ':package:',
+    Color.White,
+    'Add or update compiled files or packages.'
+  ),
+  new Emoji(
+    '👽',
+    ':alien:',
+    Color.Red,
+    'Update code due to external API changes.'
+  ),
+  new Emoji(
+    '🚚',
+    ':truck:',
+    Color.Orange,
+    'Move or rename resources (e.g.: files, paths, routes).'
+  ),
+  new Emoji('📄', ':page_facing_up:', Color.Yellow, 'Add or update license.'),
+  new Emoji('💥', ':boom:', Color.Green, 'Introduce breaking changes.'),
+  new Emoji('🍱', ':bento:', Color.Blue, 'Add or update assets.'),
+  new Emoji('♿', ':wheelchair:', Color.Purple, 'Improve accessibility.'),
+  new Emoji(
+    '💡',
+    ':bulb:',
+    Color.Pink,
+    'Add or update comments in source code.'
+  ),
+  new Emoji('🍻', ':beers:', Color.White, 'Write code drunkenly.'),
+  new Emoji(
+    '💬',
+    ':speech_balloon:',
+    Color.White,
+    'Add or update text and literals.'
+  ),
+  new Emoji(
+    '🗃️',
+    ':card_file_box:',
+    Color.White,
+    'Perform database related changes.'
+  ),
+  new Emoji('🔊', ':loud_sound:', Color.Blue, 'Add or update logs.'),
+  new Emoji('🔇', ':mute:', Color.Red, 'Remove logs.'),
+  new Emoji(
+    '👥',
+    ':busts_in_silhouette:',
+    Color.Orange,
+    'Add or update contributor(s).'
+  ),
+  new Emoji(
+    '🚸',
+    ':children_crossing:',
+    Color.Yellow,
+    'Improve user experience / usability.'
+  ),
+  new Emoji(
+    '🏗️',
+    ':building_construction:',
+    Color.Green,
+    'Make architectural changes.'
+  ),
+  new Emoji('📱', ':iphone:', Color.Blue, 'Work on responsive design.'),
+  new Emoji('🤡', ':clown_face:', Color.Purple, 'Mock things.'),
+  new Emoji('🥚', ':egg:', Color.Pink, 'Add or update an easter egg.'),
+  new Emoji(
+    '🙈',
+    ':see_no_evil:',
+    Color.White,
+    'Add or update a .gitignore file.'
+  ),
+  new Emoji('📸', ':camera_flash:', Color.White, 'Add or update snapshots.'),
+  new Emoji('⚗️', ':alembic:', Color.White, 'Perform experiments.'),
+  new Emoji('🔍', ':mag:', Color.Yellow, 'Improve SEO.'),
+  new Emoji(
+    '🏷️',
+    ':label:',
+    Color.Red,
+    'Add or update types (Flow, TypeScript).'
+  ),
+  new Emoji('🌱', ':seedling:', Color.Orange, 'Add or update seed files.'),
+  new Emoji(
+    '🚩',
+    ':triangular_flag_on_post:',
+    Color.Yellow,
+    'Add, update, or remove feature flags.'
+  ),
+  new Emoji('🥅', ':goal_net:', Color.Green, 'Catch errors.'),
+  new Emoji(
+    '💫',
+    ':dizzy:',
+    Color.Blue,
+    'Add or update animations and transitions.'
+  ),
+  new Emoji(
+    '🗑️',
+    ':wastebasket:',
+    Color.Purple,
+    'Deprecate code that needs to be cleaned up.'
+  ),
+  new Emoji(
+    '🛂',
+    ':passport_control:',
+    Color.Pink,
+    'Work on code related to authorization, authentication, or permissions.'
+  ),
+  new Emoji(
+    '🩹',
+    ':adhesive_bandage:',
+    Color.White,
+    'Simple fix for a non-critical issue.'
+  ),
+  new Emoji(
+    '🧐',
+    ':monocle_face:',
+    Color.White,
+    'Data exploration/inspection.'
+  ),
+  new Emoji('⚰️', ':coffin:', Color.White, 'Remove dead code.'),
+  new Emoji('🧪', ':test_tube:', Color.Green, 'Add or update tests.'),
+  new Emoji('👔', ':necktie:', Color.Red, 'Add or update a business layer.'),
+  new Emoji('🩺', ':stethoscope:', Color.Orange, 'Add or update healthcheck.'),
+  new Emoji('🧱', ':bricks:', Color.Yellow, 'Infrastructure related changes.'),
+  new Emoji(
+    '🧑‍💻',
+    ':technologist:',
+    Color.Green,
+    'Improve developer experience.'
+  ),
+  new Emoji(
+    '💸',
+    ':moneybag:',
+    Color.Blue,
+    'Add sponsorships or money related infrastructure.'
+  ),
+  new Emoji(
+    '🧵',
+    ':thread:',
+    Color.Purple,
+    'Add or update code related to multithreading or concurrency.'
+  ),
+  new Emoji('🚑', ':ambulance:', Color.Yellow, 'Critical hotfix.'),
+  new Emoji('🥚', ':egg:', Color.Blue, 'Add or update an easter egg.'),
+];

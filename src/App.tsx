@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import SearchBar from './components/SearchBar';
+import { emojis } from './Emoji';
+import './style.css';
 
-function App() {
+const App = () => {
+  const [filter, setFilter] = React.useState('');
+  const [filteredEmojis, setFilteredEmojis] = React.useState(emojis);
+
+  useEffect(() => {
+    document.title = 'Gitmoji' + (filter ? ` - ${filter}` : '');
+
+    setFilteredEmojis(
+      emojis.filter((emoji) => {
+        return emoji.includes(filter);
+      })
+    );
+
+    return () => {
+      document.title = 'Gitmoji';
+    };
+  }, [filter]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <SearchBar setField={setFilter} />
+      <div className='cards'>
+        {filteredEmojis.map((emoji) => emoji.toCard())}
+      </div>
+    </main>
   );
-}
+};
 
 export default App;
