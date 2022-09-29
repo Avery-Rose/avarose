@@ -1,0 +1,52 @@
+@use '../abstracts/colors';
+
+.nav-links {
+  padding: 0;
+  position: fixed;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: colors.$primary;
+  top: -100vh;
+  transition: top 0.5s ease, opacity 0.3s ease-in-out;
+  opacity: 0;
+
+  &.open {
+    opacity: 1;
+    top: 0;
+  }
+
+  .nav-link {
+    &.active {
+      &::after {
+        content: '';
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: colors.$secondary;
+        transition: all 0.3s ease;
+      }
+    }
+
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    transition: color 100ms linear;
+    font-size: 2rem;
+    &:hover {
+      color: colors.$secondary;
+    }
+  }
+}

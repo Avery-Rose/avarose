@@ -1,0 +1,57 @@
+@use './abstracts/colors';
+
+@use './abstracts/mixins';
+
+@use './components/burger';
+@use './components/navbar';
+@use './components/emojiList';
+@use './components/emojiCard';
+
+li,
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: colors.$background;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: colors.$background;
+  color: colors.$foreground;
+  @include mixins.flexCenter(column, center, center);
+}
+
+.fill-W {
+  width: 100%;
+}
+
+.fill-H {
+  min-height: 100vh;
+}
+
+.background-primary {
+  background-color: colors.$primary;
+}
+
+* {
+  ::selection {
+    background-color: colors.$primary;
+    color: colors.$background;
+  }
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

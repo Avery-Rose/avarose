@@ -1,30 +1,4 @@
 import { useContext } from 'react';
-import { Color } from './Color';
-import { NotificationContext } from './NotificationContext';
-
-const CopyButton = ({ emoji }: { emoji: Emoji }) => {
-  const { add, list } = useContext(NotificationContext);
-
-  const generateId = () => {
-    return Math.round(list.length + Math.random() * Date.now());
-  };
-
-  const handleClick = () => {
-    navigator.clipboard.writeText(emoji.toString());
-    console.log(add);
-    add({
-      id: generateId(),
-      message: `${emoji.toString()} was copied to your clipboard.`,
-      type: 'success',
-    });
-  };
-
-  return (
-    <button className='emoji' onClick={handleClick}>
-      {emoji.toString()}
-    </button>
-  );
-};
 
 class Emoji {
   emoji: string;
@@ -65,7 +39,7 @@ class Emoji {
             backgroundColor: this.color,
             backgroundImage: this.getGradient(),
           }}>
-          <CopyButton emoji={this} />
+          <button className='emoji-card-header-button'>{this.emoji}</button>
         </div>
         <div className='emoji-card-body'>
           <h2>{this.name}</h2>

@@ -1,34 +1,57 @@
-import React, { useEffect } from 'react';
-import SearchBar from './components/SearchBar';
-import { emojis } from './Emoji';
-import './style.css';
+import * as React from 'react';
 
-const App = () => {
-  const [filter, setFilter] = React.useState('');
-  const [filteredEmojis, setFilteredEmojis] = React.useState(emojis);
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 
-  useEffect(() => {
-    document.title = 'Gitmoji' + (filter ? ` - ${filter}` : '');
+import { Dashboard } from './Pages/Dashboard';
 
-    setFilteredEmojis(
-      emojis.filter((emoji) => {
-        return emoji.includes(filter);
-      })
-    );
+import { AuthContextProvider, useAuthState } from './firebase/firebase';
+import Home from './Pages/Home';
+import Unauthorized from './Pages/Unauthorized';
+import Navbar from './Components/Navbar';
 
-    return () => {
-      document.title = 'Gitmoji';
-    };
-  }, [filter]);
+export const RequireAuth = (props: any) => {
+  const location = useLocation();
+  const { user } = useAuthState();
 
-  return (
-    <main>
-      <SearchBar setField={setFilter} />
-      <div className='cards'>
-        {filteredEmojis.map((emoji) => emoji.toCard())}
-      </div>
-    </main>
-  );
+  return user ? props.children : <Navigate to={'/unauthorized'} />;
 };
 
-export default App;
+export const RequireUnauth = (props: any) => {
+  const { user } = useAuthState();
+  return user ? <Navigate to='/' /> : props.children;
+};
+
+export const App = () => {
+  return (
+    <AuthContextProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route
+            path='/dashboard'
+            element={
+              <RequireAuth>
+                <Dashboard />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/unauthorized/'
+            element={
+              <RequireUnauth>
+                <Unauthorized />
+              </RequireUnauth>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </AuthContextProvider>
+  );
+};
