@@ -1,9 +1,60 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    match /groups/{postId} {
+    	allow read: if true;
+      allow read, write: if isSignedIn();
+    }
+
+    match /message/{messageId} {
+    	allow read: if isSignedIn();
+    	allow create: if isSignedIn() && groupExists() && isUser(incomingData().authorId);
+    }
+
+    match /user/{userId} {
+    	allow read, create: if isSignedIn();
+    	allow write: if isUser(userId);
+    }
+
+    match /profile/{profileId} {
+      allow read, create: if isSignedIn();
+      allow read: if true;
+      allow write: if isUser(profileId);
+    }
+
     match /{document=**} {
-      allow read, write: if
-          request.time < timestamp.date(2022, 10, 28);
+      allow read, write: if false;
+    }
+
+    // Functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function groupExists() {
+    	return exists(/databases/$(database)/documents/groups/$(incomingData().groupId));
+    }
+
+    // [WRITE] Data that is sent to a Firestore document
+    function incomingData() {
+      return request.resource.data;
+    }
+    // [READ] Data that is contained in a Firestore document
+    function existingData() {
+      return resource.data;
+    }
+
+    // Does the logged-in user match the requested userId?
+    function isUser(userId) {
+      return request.auth.uid == userId;
+    }
+
+   function requestMatchesUID() {
+        return request.auth.uid == request.resource.data.uid;
+    }
+
+    function resourceMatchesUID() {
+        return request.auth.uid == resource.data.uid;
     }
   }
 }
