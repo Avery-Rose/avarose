@@ -31,6 +31,13 @@ main {
   background-color: colors.$background;
   color: colors.$foreground;
   @include mixins.flexCenter(column, center, center);
+
+  min-height: 100vh;
+}
+
+section {
+  padding: 2rem 2rem 1rem 2rem;
+  height: 100%;
 }
 
 .fill-W {

@@ -1,6 +1,8 @@
+import { Button } from '@chakra-ui/react';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import * as React from 'react';
-import { Button } from 'react-bootstrap';
+
+import { FiLogIn } from 'react-icons/fi';
 
 interface LoginButtonProps {
   action?: () => void;
@@ -15,8 +17,9 @@ export const LoginButton = ({ action, ...props }: LoginButtonProps) => {
   };
 
   return (
-    <Button onClick={handleGoogleLogin} variant='primary'>
-      Login with Google
+    <Button colorScheme='facebook' onClick={handleGoogleLogin} {...props}>
+      <FiLogIn />
+      Login
     </Button>
   );
 };

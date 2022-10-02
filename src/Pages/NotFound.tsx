@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-const Unauthorized = () => {
+const NotFound = () => {
   return (
     <main
       className='fill-W fill-H'
@@ -10,9 +8,9 @@ const Unauthorized = () => {
         alignItems: 'center',
         flexDirection: 'column',
       }}>
-      <h1>Unauthorized</h1>
+      <h1>Not Found</h1>
     </main>
   );
 };
 
-export default Unauthorized;
+export default NotFound;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from 'react-bootstrap/esm/Button';
+import { Button } from '@chakra-ui/react';
 
 import { getAuth, signOut } from 'firebase/auth';
 
@@ -11,10 +11,19 @@ export const Dashboard = () => {
 
   return (
     <main className='fill-W fill-H'>
-      <h1>Dashboard</h1>
-      <Button onClick={handleLogout} variant='primary'>
-        Logout
-      </Button>
+      <div
+        className='fill-W fill-H'
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}>
+        <h1>Dashboard</h1>
+        <Button onClick={handleLogout} variant='primary'>
+          Logout
+        </Button>
+      </div>
     </main>
   );
 };

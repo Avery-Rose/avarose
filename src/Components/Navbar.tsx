@@ -1,9 +1,13 @@
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from 'firebase/auth';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthState } from '../firebase/firebase';
 import Burger from './Burger';
-import { LoginButton } from './LoginButton';
-import { LogoutButton } from './LogoutButton';
 
 enum requiredAuthState {
   LoggedIn,
@@ -14,7 +18,7 @@ enum requiredAuthState {
 interface NavButton {
   label: string;
   reqAuthState: requiredAuthState;
-  component: React.ReactElement;
+  action: (any) => void;
 }
 
 interface NavPage {
@@ -34,18 +38,31 @@ const Pages: NavPage[] = [
     name: 'Dashboard',
     reqAuthState: requiredAuthState.LoggedIn,
   },
+  {
+    path: '/settings',
+    name: 'Settings',
+    reqAuthState: requiredAuthState.LoggedIn,
+  },
 ];
 
 const Buttons: NavButton[] = [
   {
     label: 'Login',
     reqAuthState: requiredAuthState.LoggedOut,
-    component: <LoginButton />,
+    action: (func) => {
+      signInWithPopup(getAuth(), new GoogleAuthProvider()).then(() => {
+        if (func) func();
+      });
+    },
   },
   {
     label: 'Logout',
     reqAuthState: requiredAuthState.LoggedIn,
-    component: <LogoutButton />,
+    action: (func) => {
+      signOut(getAuth()).then(() => {
+        if (func) func();
+      });
+    },
   },
 ];
 
@@ -91,14 +108,12 @@ const Navbar = () => {
         })}
         {Buttons.map((button) => {
           if (hasPermission(button.reqAuthState)) {
-            const Component = button.component as React.ReactElement;
-
             return (
               <li key={button.label}>
                 <div className='nav-link'>
-                  {React.cloneElement(Component, {
-                    action: handleLinkClick,
-                  })}
+                  <button onClick={() => button.action(handleLinkClick)}>
+                    {button.label}
+                  </button>
                 </div>
               </li>
             );

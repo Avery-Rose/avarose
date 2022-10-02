@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 
-import { Button } from 'react-bootstrap';
+import { Button } from '@chakra-ui/react';
 
 interface LogoutButtonProps {
   action?: () => void;
@@ -16,7 +16,7 @@ export const LogoutButton = ({ action, ...props }: LogoutButtonProps) => {
   };
 
   return (
-    <Button onClick={handleLogout} variant='primary'>
+    <Button colorScheme='facebook' onClick={handleLogout}>
       Logout
     </Button>
   );

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import EmojiList from '../Components/EmojiList';
+
+import { Divider, Text } from '@chakra-ui/react';
 
 const Home = () => {
   return (
@@ -13,10 +14,25 @@ const Home = () => {
           minHeight: '250px',
           height: '40vh',
           width: '100%',
+          textAlign: 'center',
         }}>
-        <h1>GitMoji</h1>
+        <Text fontSize='5xl' color='white' noOfLines={[1, 2, 3]}>
+          &lt;AvaRose /&gt;
+        </Text>
       </div>
-      <EmojiList />
+      <section
+        style={{
+          margin: '0 auto',
+          textAlign: 'center',
+          maxWidth: '800px',
+        }}>
+        <Text fontSize='4xl'>🎉 Welcome to my website 👋</Text>
+        <Divider />
+        <Text fontSize='xl'>
+          My name is Avery and I am a College Student at NBCC. I am currently in
+          my 2nd year of Web and Mobile Application Development.
+        </Text>
+      </section>
     </main>
   );
 };

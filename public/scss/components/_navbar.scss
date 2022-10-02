@@ -1,6 +1,7 @@
 @use '../abstracts/colors';
 
 .nav-links {
+  z-index: 998;
   padding: 0;
   position: fixed;
   width: 100%;
@@ -15,11 +16,9 @@
   height: 100vh;
   background-color: colors.$primary;
   top: -100vh;
-  transition: top 0.5s ease, opacity 0.3s ease-in-out;
-  opacity: 0;
+  transition: top 0.5s ease;
 
   &.open {
-    opacity: 1;
     top: 0;
   }
 
@@ -45,6 +44,22 @@
     text-align: center;
     transition: color 100ms linear;
     font-size: 2rem;
+
+    button {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+      text-align: center;
+      transition: color 100ms linear;
+      font-size: 2rem;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      &:hover {
+        color: colors.$secondary;
+      }
+    }
+
     &:hover {
       color: colors.$secondary;
     }
