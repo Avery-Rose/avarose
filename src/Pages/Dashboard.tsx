@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { getAuth, signOut } from 'firebase/auth';
-import Button from '@mui/material/Button';
+import Button from '@nextui-org/react/button';
 
 export const Dashboard = () => {
   const handleLogout = () => {

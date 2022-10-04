@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import Spinner from '@mui/material/CircularProgress';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
+import { Loading, Container, Button, Avatar } from '@nextui-org/react';
+import Switch from '@nextui-org/react/switch';
 
 import { useAuthState } from '../firebase/firebase';
-import { FormGroup } from '@mui/material';
 
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -33,7 +29,7 @@ export const Settings = () => {
   if (loading) {
     return (
       <main>
-        <Spinner />
+        <Loading />
       </main>
     );
   }
@@ -48,32 +44,38 @@ export const Settings = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Avatar src={avatar} sx={{ width: 100, height: 100 }} />
-        <Typography
-          variant='h4'
-          style={{ textAlign: 'center', marginTop: '1rem' }}>
+        <Avatar src={avatar} style={{ width: 100, height: 100 }} />
+        <h4 style={{ textAlign: 'center', marginTop: '1rem' }}>
           {user?.displayName}
-        </Typography>
+        </h4>
 
         <h5
           style={{
             textAlign: 'center',
+            marginTop: '0.5rem',
           }}>
           {email}
         </h5>
-        <Button onClick={toggleShowEmail}>
-          {displayEmail ? 'Hide Email' : 'Show Email'}
-        </Button>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row-reverse',
+            alignItems: 'center',
+            marginTop: '1rem',
+            gap: '1rem',
+          }}>
+          <span>{displayEmail ? 'Hide' : 'Reveal'}</span>
+          <Switch bordered onChange={toggleShowEmail} checked={displayEmail} />
+        </div>
         <Button
           onClick={() => {
             signOut(getAuth());
           }}
-          variant='contained'
           style={{ marginTop: '1rem' }}>
           Sign Out
         </Button>
       </Container>
-      <FormGroup
+      <div
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -91,7 +93,7 @@ export const Settings = () => {
           }}>
           🚧 Under Construction 🚧
         </h4>
-      </FormGroup>
+      </div>
     </main>
   );
 };

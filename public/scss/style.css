@@ -36,7 +36,8 @@ button,
 a,
 li,
 ul,
-ol {
+ol,
+span {
   font-weight: 400;
   font-family: "Karla", sans-serif;
   text-decoration: none;
@@ -72,7 +73,8 @@ button,
 a,
 li,
 ul,
-ol {
+ol,
+span {
   font-size: 1rem;
 }
 
@@ -100,7 +102,8 @@ button,
 a,
 li,
 ul,
-ol {
+ol,
+span {
     font-size: 1.25rem;
   }
 }
@@ -128,7 +131,8 @@ button,
 a,
 li,
 ul,
-ol {
+ol,
+span {
     font-size: 1.5rem;
   }
 }
@@ -169,6 +173,11 @@ main {
 section {
   padding: 2rem 2rem 1rem 2rem;
   height: 100%;
+}
+
+button,
+a {
+  cursor: pointer;
 }
 
 .burger {

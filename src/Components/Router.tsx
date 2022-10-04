@@ -1,10 +1,11 @@
+import * as React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import { useAuthState } from '../firebase/firebase';
 
 // Components
 import Navbar from '../Components/Navbar';
-import Spinner from '@mui/material/CircularProgress';
+import { Loading } from '@nextui-org/react';
 // Pages
 import Home from '../Pages/Home';
 import { Settings } from '../Pages/Settings';
@@ -24,7 +25,7 @@ export const RequireAuth = (props: any) => {
         height: '100vh',
         width: '100vw',
       }}>
-      <Spinner role='status' />
+      <Loading />
     </main>
   ) : user ? (
     props.children

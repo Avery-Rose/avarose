@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { FiLogIn } from 'react-icons/fi';
 
-import Button from '@mui/material/Button';
+import Button from '@nextui-org/react/button';
 
 interface LoginButtonProps {
   action?: () => void;
