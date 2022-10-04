@@ -1,0 +1,5 @@
+@use '../abstracts/colors';
+
+.heading {
+  background-color: colors.$primary;
+}

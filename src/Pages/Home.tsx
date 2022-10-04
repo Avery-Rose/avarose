@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <main>
       <div
-        className='background-primary'
+        className='heading'
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -14,7 +14,7 @@ const Home = () => {
           width: '100%',
           textAlign: 'center',
         }}>
-        <h1>&lt;AvaRose /&gt;</h1>
+        <h1>&lt;/&gt; AvaRose</h1>
       </div>
       <section
         style={{

@@ -6,10 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 
-import Switch from '@mui/material/Switch';
-
 import { useAuthState } from '../firebase/firebase';
-import { FormControlLabel, FormGroup } from '@mui/material';
+import { FormGroup } from '@mui/material';
 
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -17,6 +15,13 @@ export const Settings = () => {
   const { user, loading } = useAuthState();
 
   const [avatar, setAvatar] = useState<string>('');
+
+  const [displayEmail, setDisplayEmail] = useState<boolean>(false);
+  const toggleShowEmail = () => setDisplayEmail(!displayEmail);
+
+  const email = displayEmail
+    ? user?.email
+    : user?.email?.replace(/^(.)(.*)(@.*)$/, '$1***$3');
 
   useEffect(() => {
     if (loading) return;
@@ -44,10 +49,21 @@ export const Settings = () => {
           alignItems: 'center',
         }}>
         <Avatar src={avatar} sx={{ width: 100, height: 100 }} />
-        <Typography variant='h4' style={{ marginTop: '1rem' }}>
+        <Typography
+          variant='h4'
+          style={{ textAlign: 'center', marginTop: '1rem' }}>
           {user?.displayName}
         </Typography>
-        <Typography variant='caption'>{user?.email}</Typography>
+
+        <h5
+          style={{
+            textAlign: 'center',
+          }}>
+          {email}
+        </h5>
+        <Button onClick={toggleShowEmail}>
+          {displayEmail ? 'Hide Email' : 'Show Email'}
+        </Button>
         <Button
           onClick={() => {
             signOut(getAuth());
@@ -69,7 +85,12 @@ export const Settings = () => {
           label='Dark Mode'
           labelPlacement='start'
         /> */}
-        🚧 Under Construction 🚧
+        <h4
+          style={{
+            textAlign: 'center',
+          }}>
+          🚧 Under Construction 🚧
+        </h4>
       </FormGroup>
     </main>
   );

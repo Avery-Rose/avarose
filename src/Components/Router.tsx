@@ -7,11 +7,9 @@ import Navbar from '../Components/Navbar';
 import Spinner from '@mui/material/CircularProgress';
 // Pages
 import Home from '../Pages/Home';
-import { Dashboard } from '../Pages/Dashboard';
 import { Settings } from '../Pages/Settings';
 import NotFound from '../Pages/NotFound';
 import Unauthorized from '../Pages/Unauthorized';
-import Cards from '../Pages/Cards';
 
 export const RequireAuth = (props: any) => {
   const { user, loading } = useAuthState();

@@ -1,76 +1,15 @@
+//
+@use './abstracts/fonts';
+@use './abstracts/typography';
 @use './abstracts/colors';
-@use './abstracts/_focus';
+@use './abstracts/focus';
 @use './abstracts/mixins';
+@use './abstracts/globals';
 
+// Components
 @use './components/burger';
 @use './components/navbar';
-
 @use './components/_cards';
 
-li,
-ul,
-ol {
-  list-style: none;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.6;
-  background-color: colors.$background;
-  min-height: 100vh;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-main {
-  background-color: colors.$background;
-  color: colors.$foreground;
-  min-height: 100vh;
-}
-
-section {
-  padding: 2rem 2rem 1rem 2rem;
-  height: 100%;
-}
-
-.fill-W {
-  width: 100%;
-}
-
-.fill-H {
-  min-height: 100vh;
-}
-
-.background-primary {
-  background-color: colors.$primary;
-}
-
-* {
-  ::selection {
-    background-color: colors.$primary;
-    color: colors.$background;
-  }
-
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-main {
-  a {
-    color: colors.$primary;
-    text-decoration: none;
-    cursor: pointer;
-
-    transition: color 100ms linear;
-
-    &:hover {
-      color: colors.$secondary;
-    }
-  }
-}
+// Pages
+@use './pages/home';
