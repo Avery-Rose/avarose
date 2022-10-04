@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Button } from '@chakra-ui/react';
 
 import { getAuth, signOut } from 'firebase/auth';
+import Button from '@mui/material/Button';
 
 export const Dashboard = () => {
   const handleLogout = () => {
@@ -20,7 +20,7 @@ export const Dashboard = () => {
           flexDirection: 'column',
         }}>
         <h1>Dashboard</h1>
-        <Button onClick={handleLogout} variant='primary'>
+        <Button onClick={handleLogout} variant='contained' color='primary'>
           Logout
         </Button>
       </div>

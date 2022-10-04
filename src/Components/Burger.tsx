@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const Burger = ({ open, setOpen, ...props }) => {
   return (
-    <div className='burger' {...props}>
+    <div id='burger' className='burger' {...props}>
       <button
         className={open ? 'menu opened' : 'menu'}
         onClick={() => setOpen(!open)}

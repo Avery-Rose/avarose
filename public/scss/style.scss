@@ -1,5 +1,5 @@
 @use './abstracts/colors';
-
+@use './abstracts/_focus';
 @use './abstracts/mixins';
 
 @use './components/burger';
@@ -30,8 +30,6 @@ nav {
 main {
   background-color: colors.$background;
   color: colors.$foreground;
-  @include mixins.flexCenter(column, center, center);
-
   min-height: 100vh;
 }
 
@@ -61,4 +59,18 @@ section {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+main {
+  a {
+    color: colors.$primary;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: color 100ms linear;
+
+    &:hover {
+      color: colors.$secondary;
+    }
+  }
 }

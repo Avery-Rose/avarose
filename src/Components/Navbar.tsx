@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   getAuth,
   GoogleAuthProvider,
@@ -85,43 +86,70 @@ const Navbar = () => {
     }
   };
 
+  const closeOnEsc = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') setOpen(false);
+  };
+
+  useEffect(() => {
+    // Add event listener on mount
+    document.addEventListener('keydown', closeOnEsc);
+    return () => document.removeEventListener('keydown', closeOnEsc);
+  }, []);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [open]);
+
   return (
-    <>
+    <header>
       <Burger open={open} setOpen={setOpen} />
-      <ul className={open ? 'nav-links open' : 'nav-links'}>
-        {Pages.map((page) => {
-          if (hasPermission(page.reqAuthState)) {
-            return (
-              <li key={page.path}>
-                <Link
-                  to={page.path}
-                  className={`nav-link ${
-                    isActivePage(page.path) ? 'active' : ''
-                  }`}
-                  onClick={handleLinkClick}>
-                  {page.name}
-                </Link>
-              </li>
-            );
-          }
-          return null;
-        })}
-        {Buttons.map((button) => {
-          if (hasPermission(button.reqAuthState)) {
-            return (
-              <li key={button.label}>
-                <div className='nav-link'>
-                  <button onClick={() => button.action(handleLinkClick)}>
-                    {button.label}
-                  </button>
-                </div>
-              </li>
-            );
-          }
-          return null;
-        })}
-      </ul>
-    </>
+      <nav>
+        <ul
+          aria-hidden={open ? 'false' : 'true'}
+          className={open ? 'nav-links open' : 'nav-links'}>
+          {Pages.map((page) => {
+            if (hasPermission(page.reqAuthState)) {
+              return (
+                <li aria-hidden={open ? 'false' : 'true'} key={page.path}>
+                  <Link
+                    to={page.path}
+                    className={`nav-link ${
+                      isActivePage(page.path) ? 'active' : ''
+                    }`}
+                    aria-hidden={open ? 'false' : 'true'}
+                    tabIndex={open ? 0 : -1}
+                    onClick={handleLinkClick}>
+                    {page.name}
+                  </Link>
+                </li>
+              );
+            }
+            return null;
+          })}
+          {Buttons.map((button) => {
+            if (hasPermission(button.reqAuthState)) {
+              return (
+                <li key={button.label}>
+                  <div className='nav-link'>
+                    <button
+                      aria-hidden={open ? 'false' : 'true'}
+                      tabIndex={open ? 0 : -1}
+                      onClick={() => button.action(handleLinkClick)}>
+                      {button.label}
+                    </button>
+                  </div>
+                </li>
+              );
+            }
+            return null;
+          })}
+        </ul>
+      </nav>
+    </header>
   );
 };
 

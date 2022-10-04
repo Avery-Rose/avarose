@@ -1,3 +1,8 @@
+:focus-visible {
+  outline: 0.2rem solid #18d8ff;
+  outline-offset: 0.2rem;
+}
+
 .burger {
   z-index: 999;
   position: fixed;
@@ -193,10 +198,6 @@ nav {
 main {
   background-color: #202020;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
@@ -229,4 +230,14 @@ section {
 * ::selection {
   background-color: #bf98ff;
   color: #202020;
+}
+
+main a {
+  color: #bf98ff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 100ms linear;
+}
+main a:hover {
+  color: #18d8ff;
 }/*# sourceMappingURL=style.css.map */

@@ -3,13 +3,14 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { useAuthState } from '../firebase/firebase';
 
 // Components
-import Home from '../Pages/Home';
-import Unauthorized from '../Pages/Unauthorized';
 import Navbar from '../Components/Navbar';
-import { Spinner } from '@chakra-ui/react';
+import Spinner from '@mui/material/CircularProgress';
+// Pages
+import Home from '../Pages/Home';
 import { Dashboard } from '../Pages/Dashboard';
 import { Settings } from '../Pages/Settings';
 import NotFound from '../Pages/NotFound';
+import Unauthorized from '../Pages/Unauthorized';
 
 export const RequireAuth = (props: any) => {
   const { user, loading } = useAuthState();
@@ -24,7 +25,7 @@ export const RequireAuth = (props: any) => {
         height: '100vh',
         width: '100vw',
       }}>
-      <Spinner />
+      <Spinner role='status' />
     </main>
   ) : user ? (
     props.children
@@ -43,7 +44,14 @@ const Router = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route
+          path='/'
+          element={
+            <>
+              <Home />
+            </>
+          }
+        />
         <Route
           path='/dashboard'
           element={
@@ -68,7 +76,14 @@ const Router = () => {
             </RequireAuth>
           }
         />
-        <Route path='/404' element={<NotFound />} />
+        <Route
+          path='/404'
+          element={
+            <>
+              <NotFound />
+            </>
+          }
+        />
         <Route path='*' element={<Navigate to='/404' />} />
       </Routes>
     </BrowserRouter>
