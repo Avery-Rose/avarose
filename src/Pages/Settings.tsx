@@ -11,6 +11,8 @@ import Switch from '@mui/material/Switch';
 import { useAuthState } from '../firebase/firebase';
 import { FormControlLabel, FormGroup } from '@mui/material';
 
+import { signOut, getAuth } from 'firebase/auth';
+
 export const Settings = () => {
   const { user, loading } = useAuthState();
 
@@ -46,7 +48,12 @@ export const Settings = () => {
           {user?.displayName}
         </Typography>
         <Typography variant='caption'>{user?.email}</Typography>
-        <Button variant='contained' style={{ marginTop: '1rem' }}>
+        <Button
+          onClick={() => {
+            signOut(getAuth());
+          }}
+          variant='contained'
+          style={{ marginTop: '1rem' }}>
           Sign Out
         </Button>
       </Container>
@@ -57,11 +64,12 @@ export const Settings = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <FormControlLabel
+        {/* <FormControlLabel
           control={<Switch />}
           label='Dark Mode'
           labelPlacement='start'
-        />
+        /> */}
+        🚧 Under Construction 🚧
       </FormGroup>
     </main>
   );

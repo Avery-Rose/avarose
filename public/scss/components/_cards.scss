@@ -1,0 +1,157 @@
+.cards {
+  padding: 5rem 0 5rem 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  justify-content: center;
+
+  max-width: 916px;
+  width: calc(100% - 20px);
+}
+
+.card {
+  // 3d effect
+  transform-style: preserve-3d;
+  transition: transform 200ms;
+
+  // css variables
+  --card-color: #4747472f;
+
+  background-color: var(--card-color);
+  border-radius: 10px;
+  cursor: pointer;
+  height: 260px;
+  width: 290px;
+  position: relative;
+
+  &::after {
+    background: radial-gradient(
+      600px circle at var(--card-mouse-x) var(--card-mouse-y),
+      rgba(255, 255, 255, 0.4),
+      transparent 40%
+    );
+    z-index: 1;
+  }
+
+  &::before {
+    background: radial-gradient(
+      800px circle at var(--card-mouse-x) var(--card-mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+
+    transition: opacity 500ms;
+    z-index: 3;
+  }
+
+  transform: rotateY(0deg) rotateX(0deg) translateZ(0px) scale(1);
+
+  &:hover {
+    transform: perspective(1000px) rotateY(var(--card-rotate-y))
+      rotateX(var(--card-rotate-x)) scale(1.1);
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  .card-border {
+    background: radial-gradient(
+      400px circle at var(--card-mouse-x) var(--card-mouse-y),
+      rgba(255, 255, 255, 0.3),
+      transparent 40%
+    );
+    z-index: 1;
+  }
+
+  .card-content {
+    background-color: var(--card-color);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    margin: 1px;
+    position: absolute;
+    z-index: 2;
+    padding: 1rem;
+
+    h2,
+    p {
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+      color: #f3f300;
+    }
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  #cards {
+    max-width: 1000px;
+    padding: 10px 0px;
+  }
+
+  .card {
+    flex-shrink: 1;
+    width: calc(50% - 4px);
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    height: 180px;
+  }
+
+  .card-image {
+    height: 80px;
+  }
+
+  .card-image > i {
+    font-size: 3em;
+  }
+
+  .card-info-wrapper {
+    padding: 0px 10px;
+  }
+
+  .card-info > i {
+    font-size: 0.8em;
+  }
+
+  .card-info-title > h3 {
+    font-size: 0.9em;
+  }
+
+  .card-info-title > h4 {
+    font-size: 0.8em;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    width: 100%;
+  }
+}

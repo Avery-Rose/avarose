@@ -4,8 +4,8 @@
 
 @use './components/burger';
 @use './components/navbar';
-@use './components/emojiList';
-@use './components/emojiCard';
+
+@use './components/_cards';
 
 li,
 ul,

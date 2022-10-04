@@ -11,6 +11,7 @@ import { Dashboard } from '../Pages/Dashboard';
 import { Settings } from '../Pages/Settings';
 import NotFound from '../Pages/NotFound';
 import Unauthorized from '../Pages/Unauthorized';
+import Cards from '../Pages/Cards';
 
 export const RequireAuth = (props: any) => {
   const { user, loading } = useAuthState();
@@ -52,14 +53,14 @@ const Router = () => {
             </>
           }
         />
-        <Route
+        {/* <Route
           path='/dashboard'
           element={
             <RequireAuth>
               <Dashboard />
             </RequireAuth>
           }
-        />
+        /> */}
         <Route
           path='/unauthorized/'
           element={
