@@ -1,6 +1,6 @@
 # AvaRose.dev
 
-This is the source code for my personal website, [AvaRose.dev](https://avarose.dev). It's built with [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). hosted on [Firebase](https://firebase.google.com/).
+This is the source code for my personal website, [AvaRose.dev](https://avarose.dev). It's built with [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Parcel](https://parceljs.org/). hosted on [Firebase](https://firebase.google.com/).
 
 ## Prerequisites
 
@@ -32,6 +32,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 - [Firebase](https://firebase.google.com/)
 - [React Router](https://reacttraining.com/react-router/)
 - [NextUi](https://nextui.org/)
+- [Parcel](https://parceljs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [pnpm](https://pnpm.io/)
 
 ## Contributing
 
