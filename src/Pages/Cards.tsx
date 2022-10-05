@@ -93,9 +93,9 @@ const Cards = () => {
         alignItems: 'center',
         flexDirection: 'column',
         backgroundColor: '#151515',
-      }}
-    >
+      }}>
       <button
+        type='button'
         onClick={addCard}
         style={{
           backgroundColor: '#707070',
@@ -108,8 +108,7 @@ const Cards = () => {
           bottom: '1rem',
           right: '1rem',
           boxShadow: '0 0 1rem rgba(0, 0, 0, 0.5)',
-        }}
-      >
+        }}>
         Add Card
       </button>
       <div className='cards'>

@@ -112,8 +112,7 @@ const Navbar = () => {
       <nav>
         <ul
           aria-hidden={open ? 'false' : 'true'}
-          className={open ? 'nav-links open' : 'nav-links'}
-        >
+          className={open ? 'nav-links open' : 'nav-links'}>
           {Pages.map((page) => {
             if (hasPermission(page.reqAuthState)) {
               return (
@@ -125,8 +124,7 @@ const Navbar = () => {
                     }`}
                     aria-hidden={open ? 'false' : 'true'}
                     tabIndex={open ? 0 : -1}
-                    onClick={handleLinkClick}
-                  >
+                    onClick={handleLinkClick}>
                     {page.name}
                   </Link>
                 </li>
@@ -140,10 +138,10 @@ const Navbar = () => {
                 <li key={button.label}>
                   <div className='nav-link'>
                     <button
+                      type='button'
                       aria-hidden={open ? 'false' : 'true'}
                       tabIndex={open ? 0 : -1}
-                      onClick={() => button.action(handleLinkClick)}
-                    >
+                      onClick={() => button.action(handleLinkClick)}>
                       {button.label}
                     </button>
                   </div>
