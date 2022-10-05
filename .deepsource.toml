@@ -1,6 +1,6 @@
 version = 1
 
-exclude_patterns = ["build/**"]
+exclude_patterns = ["dist/**"]
 
 [[analyzers]]
 name = "test-coverage"
