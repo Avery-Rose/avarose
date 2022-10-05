@@ -4,7 +4,6 @@
   "private": true,
   "license": "MIT",
   "author": "Avery Rose Doucet",
-  "public": "dist",
   "source": "src/public/index.html",
   "scripts": {
     "postinstall": "npm run build",
