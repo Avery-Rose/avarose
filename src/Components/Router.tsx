@@ -77,14 +77,7 @@ const Router = () => {
             </RequireAuth>
           }
         />
-        <Route
-          path='discord'
-          element={
-            <RequireAuth>
-              <Discord />
-            </RequireAuth>
-          }
-        />
+        <Route path='discord' element={<Discord />} />
         <Route
           path='/404'
           element={

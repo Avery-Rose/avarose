@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 // Providers
-import { AuthContextProvider } from './firebase/firebase';
+import AuthProvider from './Providers/AuthProvider';
 import Router from './Components/Router';
 
 export const App = () => {
   return (
-    <AuthContextProvider>
+    <AuthProvider>
       <Router />
-    </AuthContextProvider>
+    </AuthProvider>
   );
 };
