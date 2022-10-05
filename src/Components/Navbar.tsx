@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
-import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthState } from '../firebase/firebase';
 import Burger from './Burger';
@@ -139,6 +138,7 @@ const Navbar = () => {
                 <li key={button.label}>
                   <div className='nav-link'>
                     <button
+                      type='button'
                       aria-hidden={open ? 'false' : 'true'}
                       tabIndex={open ? 0 : -1}
                       onClick={() => button.action(handleLinkClick)}>

@@ -14,7 +14,8 @@
 
   width: 100vw;
   height: 100vh;
-  background-color: colors.$primary;
+  background-color: colors.$background;
+
   top: -100vh;
   transition: top 0.5s ease, opacity 1s ease;
 
@@ -27,38 +28,24 @@
   }
 
   .nav-link {
-    &.active {
-      &::after {
-        content: '';
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: colors.$secondary;
-        transition: all 0.3s ease;
-      }
-    }
-
-    color: #fff;
+    color: colors.$text-alt;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.5rem;
     text-align: center;
-    transition: color 100ms linear;
+    transition: color 100ms;
     font-size: 2rem;
 
     button {
       text-transform: uppercase;
-      font-weight: 700;
       letter-spacing: 0.5rem;
       text-align: center;
-      transition: color 100ms linear;
+      transition: color 100ms;
       font-size: 2rem;
       background-color: transparent;
       border: none;
-      color: #fff;
+      color: colors.$text-alt;
       &:hover {
         color: colors.$secondary;
       }

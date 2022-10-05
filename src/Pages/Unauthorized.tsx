@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const Unauthorized = () => {
   return (
@@ -9,7 +9,8 @@ const Unauthorized = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-      }}>
+      }}
+    >
       <h1>Unauthorized</h1>
     </main>
   );

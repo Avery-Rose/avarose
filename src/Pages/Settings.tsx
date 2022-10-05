@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-import { Loading, Container, Button, Avatar } from '@nextui-org/react';
-import Switch from '@nextui-org/react/switch';
-
 import { useAuthState } from '../firebase/firebase';
-
 import { signOut, getAuth } from 'firebase/auth';
 
-export const Settings = () => {
+// NextUI
+import Loading from '@nextui-org/react/loading';
+import Container from '@nextui-org/react/container';
+import Button from '@nextui-org/react/button';
+import Avatar from '@nextui-org/react/avatar';
+import Switch from '@nextui-org/react/switch';
+
+const Settings = () => {
   const { user, loading } = useAuthState();
 
   const [avatar, setAvatar] = useState<string>('');
@@ -43,7 +46,8 @@ export const Settings = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <Avatar src={avatar} style={{ width: 100, height: 100 }} />
         <h4 style={{ textAlign: 'center', marginTop: '1rem' }}>
           {user?.displayName}
@@ -53,7 +57,8 @@ export const Settings = () => {
           style={{
             textAlign: 'center',
             marginTop: '0.5rem',
-          }}>
+          }}
+        >
           {email}
         </h5>
         <div
@@ -63,7 +68,8 @@ export const Settings = () => {
             alignItems: 'center',
             marginTop: '1rem',
             gap: '1rem',
-          }}>
+          }}
+        >
           <span>Reveal</span>
           <Switch bordered onChange={toggleShowEmail} checked={displayEmail} />
         </div>
@@ -71,7 +77,8 @@ export const Settings = () => {
           onClick={() => {
             signOut(getAuth());
           }}
-          style={{ marginTop: '1rem' }}>
+          style={{ marginTop: '1rem' }}
+        >
           Sign Out
         </Button>
       </Container>
@@ -81,7 +88,8 @@ export const Settings = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-        }}>
+        }}
+      >
         {/* <FormControlLabel
           control={<Switch />}
           label='Dark Mode'
@@ -90,10 +98,13 @@ export const Settings = () => {
         <h4
           style={{
             textAlign: 'center',
-          }}>
+          }}
+        >
           🚧 Under Construction 🚧
         </h4>
       </div>
     </main>
   );
 };
+
+export default Settings;

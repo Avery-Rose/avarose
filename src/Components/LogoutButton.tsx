@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 
 import Button from '@nextui-org/react/button';

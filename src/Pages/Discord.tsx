@@ -1,4 +1,4 @@
-import { Loading } from '@nextui-org/react';
+import Loading from '@nextui-org/react/loading';
 import React, { useEffect } from 'react';
 
 const url = 'https://discord.com/api/guilds/1006583002517745674/widget.json',
@@ -34,7 +34,8 @@ const Discord = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-      }}>
+      }}
+    >
       {discord ? (
         <>
           <h1>{discord.name}</h1>

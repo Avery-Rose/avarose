@@ -1,5 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import * as React from 'react';
+
+import React from 'react';
 
 import { FiLogIn } from 'react-icons/fi';
 

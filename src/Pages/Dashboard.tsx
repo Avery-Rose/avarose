@@ -5,7 +5,6 @@ import Button from '@nextui-org/react/button';
 
 export const Dashboard = () => {
   const handleLogout = () => {
-    
     signOut(getAuth());
   };
 
@@ -18,7 +17,8 @@ export const Dashboard = () => {
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
-        }}>
+        }}
+      >
         <h1>Dashboard</h1>
         <Button onClick={handleLogout} variant='contained' color='primary'>
           Logout
