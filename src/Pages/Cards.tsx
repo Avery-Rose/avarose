@@ -75,7 +75,7 @@ const Cards = () => {
     setTimeout(() => {
       const lastCard = cards.getCards()[cards.getCards().length - 1];
       const lastCardElement = document.getElementById(`card-${lastCard.id}`);
-      console.log(lastCardElement);
+      
 
       lastCardElement?.scrollIntoView({
         behavior: 'smooth',
