@@ -11,8 +11,11 @@
     display: flex;
     padding: 0;
   }
-  .opened .line {
-    stroke: #ffffff;
+
+  > .opened {
+    .line {
+      stroke: colors.$primary;
+    }
   }
 
   .line {

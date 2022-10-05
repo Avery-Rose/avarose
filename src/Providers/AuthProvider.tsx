@@ -1,7 +1,5 @@
-// Provider
-
 import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AuthContext } from '../Contexts/Auth';
 
 const AuthContextProvider = (props) => {

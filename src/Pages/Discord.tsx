@@ -1,4 +1,4 @@
-import { Loading } from '@nextui-org/react';
+import Loading from '@nextui-org/react/loading';
 import React, { useEffect } from 'react';
 
 const url = 'https://discord.com/api/guilds/1006583002517745674/widget.json',

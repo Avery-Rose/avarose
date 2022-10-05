@@ -193,8 +193,9 @@ a {
   display: flex;
   padding: 0;
 }
-.burger .opened .line {
-  stroke: #ffffff;
+.burger > .opened > .line {
+  stroke: #4f4f4f;
+  fill: none;
 }
 .burger .line {
   fill: none;
@@ -243,7 +244,7 @@ a {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #bf98ff;
+  background-color: #f9b3ff;
   top: -100vh;
   transition: top 0.5s ease, opacity 1s ease;
   opacity: 0;
@@ -254,41 +255,33 @@ a {
   transition: top 0.5s ease, opacity 0s ease;
 }
 .nav-links .nav-link {
-  color: #fff;
+  color: #4f4f4f;
+  filter: drop-shadow(0 0 0.5rem #4f4f4f);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.5rem;
   text-align: center;
-  transition: color 100ms linear;
+  transition: color 100ms, filter 100ms;
   font-size: 2rem;
-}
-.nav-links .nav-link.active::after {
-  content: '';
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #18d8ff;
-  transition: all 0.3s ease;
 }
 .nav-links .nav-link button {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.5rem;
   text-align: center;
-  transition: color 100ms linear;
+  transition: inherit;
   font-size: 2rem;
   background-color: transparent;
   border: none;
-  color: #fff;
+  color: inherit;
 }
 .nav-links .nav-link button:hover {
   color: #18d8ff;
 }
 .nav-links .nav-link:hover {
   color: #18d8ff;
+  filter: drop-shadow(0 0 0.5rem #18d8ff);
 }
 
 .cards {
@@ -423,5 +416,6 @@ a {
   }
 }
 .heading {
-  background-color: #bf98ff;
+  background-color: #f9b3ff;
+  color: #4f4f4f;
 } /*# sourceMappingURL=style.css.map */

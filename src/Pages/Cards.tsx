@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Cards as CardList, Card } from '../types/card';
 
 const Cards = () => {
@@ -75,7 +75,6 @@ const Cards = () => {
     setTimeout(() => {
       const lastCard = cards.getCards()[cards.getCards().length - 1];
       const lastCardElement = document.getElementById(`card-${lastCard.id}`);
-      
 
       lastCardElement?.scrollIntoView({
         behavior: 'smooth',
@@ -94,7 +93,8 @@ const Cards = () => {
         alignItems: 'center',
         flexDirection: 'column',
         backgroundColor: '#151515',
-      }}>
+      }}
+    >
       <button
         onClick={addCard}
         style={{
@@ -108,7 +108,8 @@ const Cards = () => {
           bottom: '1rem',
           right: '1rem',
           boxShadow: '0 0 1rem rgba(0, 0, 0, 0.5)',
-        }}>
+        }}
+      >
         Add Card
       </button>
       <div className='cards'>

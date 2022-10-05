@@ -1,23 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext", "es6"],
-    "noImplicitAny": false,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
+    "target": "ES5",
+    "module": "ES2020",
+    "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["ES2020", "DOM"],
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src"
   },
   "include": ["src"]
 }

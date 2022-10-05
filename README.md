@@ -4,11 +4,7 @@ This is the source code for my personal website, [AvaRose.dev](https://avarose.d
 
 ## Prerequisites
 
-this project uses [yarn](https://yarnpkg.com/) for package management. To get started, run:
-
-```bash
-yarn install
-```
+this project uses [pnpm](https://pnpm.io/) as a package manager. You can install it with `npm install -g pnpm`.
 
 ## Development
 
@@ -17,13 +13,13 @@ To get started, clone the repository and install the dependencies:
 ```bash
 git clone https://github.com/ava-rose/avarose.dev.git
 cd avarose.dev
-yarn install
+pnpm install
 ```
 
 To start the development server, run:
 
 ```bash
-yarn start
+pnpm start
 ```
 
 ## License

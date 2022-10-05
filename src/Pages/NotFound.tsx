@@ -1,3 +1,5 @@
+import React from 'react';
+
 const NotFound = () => {
   return (
     <main
@@ -7,7 +9,8 @@ const NotFound = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-      }}>
+      }}
+    >
       <h1>Not Found</h1>
     </main>
   );

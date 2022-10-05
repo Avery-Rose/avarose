@@ -1,14 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import { useAuthState } from '../firebase/firebase';
 
 // Components
 import Navbar from '../Components/Navbar';
-import { Loading } from '@nextui-org/react';
+import Loading from '@nextui-org/react/loading';
 // Pages
 import Home from '../Pages/Home';
-import { Settings } from '../Pages/Settings';
+import Settings from '../Pages/Settings';
 import NotFound from '../Pages/NotFound';
 import Unauthorized from '../Pages/Unauthorized';
 import Discord from '../Pages/Discord';

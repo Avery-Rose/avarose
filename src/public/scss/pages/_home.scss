@@ -1,0 +1,6 @@
+@use '../abstracts/colors';
+
+.heading {
+  background-color: colors.$background-alt;
+  color: colors.$background;
+}

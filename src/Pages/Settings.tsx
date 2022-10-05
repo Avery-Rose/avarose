@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-import { Loading, Container, Button, Avatar } from '@nextui-org/react';
-import Switch from '@nextui-org/react/switch';
-
 import { useAuthState } from '../firebase/firebase';
-
 import { signOut, getAuth } from 'firebase/auth';
 
-export const Settings = () => {
+// NextUI
+import Loading from '@nextui-org/react/loading';
+import Container from '@nextui-org/react/container';
+import Button from '@nextui-org/react/button';
+import Avatar from '@nextui-org/react/avatar';
+import Switch from '@nextui-org/react/switch';
+
+const Settings = () => {
   const { user, loading } = useAuthState();
 
   const [avatar, setAvatar] = useState<string>('');
@@ -97,3 +100,5 @@ export const Settings = () => {
     </main>
   );
 };
+
+export default Settings;

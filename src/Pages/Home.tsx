@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const Home = () => {
   return (
@@ -13,7 +13,8 @@ const Home = () => {
           height: '40vh',
           width: '100%',
           textAlign: 'center',
-        }}>
+        }}
+      >
         <h1>&lt;/&gt; AvaRose</h1>
       </div>
       <section
@@ -21,7 +22,8 @@ const Home = () => {
           margin: '0 auto',
           textAlign: 'center',
           maxWidth: '800px',
-        }}>
+        }}
+      >
         <h2>🎉 Welcome to my website 👋</h2>
         <p>
           My name is Avery and I am a College Student at{' '}
