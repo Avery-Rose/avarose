@@ -16,5 +16,5 @@ export const firebaseApp = initializeApp(firebaseConfig);
 
 export const useAuthState = () => {
   const auth = useContext(AuthContext);
-  return { ...auth, isAuthenticated: auth.user != null };
+  return { ...auth, isAuthenticated: auth.user !== null };
 };
