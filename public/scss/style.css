@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 ::-moz-selection {
   background-color: #18d8ff;
   color: #202020;
@@ -25,7 +25,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  font-family: "Comfortaa", sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   word-wrap: break-word;
   text-align: center;
   line-height: 1.2;
@@ -39,7 +39,7 @@ ul,
 ol,
 span {
   font-weight: 400;
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
   text-decoration: none;
   line-height: 1.6;
 }
@@ -98,12 +98,12 @@ span {
     font-size: 1rem;
   }
   p,
-button,
-a,
-li,
-ul,
-ol,
-span {
+  button,
+  a,
+  li,
+  ul,
+  ol,
+  span {
     font-size: 1.25rem;
   }
 }
@@ -127,12 +127,12 @@ span {
     font-size: 1.25rem;
   }
   p,
-button,
-a,
-li,
-ul,
-ol,
-span {
+  button,
+  a,
+  li,
+  ul,
+  ol,
+  span {
     font-size: 1.5rem;
   }
 }
@@ -200,7 +200,9 @@ a {
   fill: none;
   stroke: #18d8ff;
   stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .burger .line1 {
   stroke-dasharray: 60 207;
@@ -262,7 +264,7 @@ a {
   font-size: 2rem;
 }
 .nav-links .nav-link.active::after {
-  content: "";
+  content: '';
   position: relative;
   top: 0;
   left: 0;
@@ -312,13 +314,21 @@ a {
   transform: rotateY(0deg) rotateX(0deg) translateZ(0px) scale(1);
 }
 .card::after {
-  background: radial-gradient(600px circle at var(--card-mouse-x) var(--card-mouse-y), rgba(255, 255, 255, 0.4), transparent 40%);
+  background: radial-gradient(
+    600px circle at var(--card-mouse-x) var(--card-mouse-y),
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
   z-index: 1;
 }
 .card::before {
-  background: radial-gradient(800px circle at var(--card-mouse-x) var(--card-mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  background: radial-gradient(
+    800px circle at var(--card-mouse-x) var(--card-mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
   border-radius: inherit;
-  content: "";
+  content: '';
   height: 100%;
   left: 0px;
   position: absolute;
@@ -330,13 +340,18 @@ a {
   z-index: 3;
 }
 .card:hover {
-  transform: perspective(1000px) rotateY(var(--card-rotate-y)) rotateX(var(--card-rotate-x)) scale(1.1);
+  transform: perspective(1000px) rotateY(var(--card-rotate-y))
+    rotateX(var(--card-rotate-x)) scale(1.1);
 }
 .card:hover::before {
   opacity: 1;
 }
 .card .card-border {
-  background: radial-gradient(400px circle at var(--card-mouse-x) var(--card-mouse-y), rgba(255, 255, 255, 0.3), transparent 40%);
+  background: radial-gradient(
+    400px circle at var(--card-mouse-x) var(--card-mouse-y),
+    rgba(255, 255, 255, 0.3),
+    transparent 40%
+  );
   z-index: 1;
 }
 .card .card-content {
@@ -409,4 +424,4 @@ a {
 }
 .heading {
   background-color: #bf98ff;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
