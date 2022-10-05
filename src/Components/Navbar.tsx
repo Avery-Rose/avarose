@@ -55,10 +55,8 @@ const Buttons: NavButton[] = [
   {
     label: 'Login',
     reqAuthState: requiredAuthState.LoggedOut,
-    action: (func) => {
-      signInWithPopup(getAuth(), new GoogleAuthProvider()).then(() => {
-        if (func) func();
-      });
+    action: () => {
+      signInWithPopup(getAuth(), new GoogleAuthProvider());
     },
   },
   {
