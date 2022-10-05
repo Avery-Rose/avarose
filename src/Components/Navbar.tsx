@@ -44,6 +44,11 @@ const Pages: NavPage[] = [
     name: 'Settings',
     reqAuthState: requiredAuthState.LoggedIn,
   },
+  {
+    path: '/discord',
+    name: 'Discord',
+    reqAuthState: requiredAuthState.LoggedIn,
+  },
 ];
 
 const Buttons: NavButton[] = [

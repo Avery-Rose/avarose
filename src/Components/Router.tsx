@@ -11,6 +11,7 @@ import Home from '../Pages/Home';
 import { Settings } from '../Pages/Settings';
 import NotFound from '../Pages/NotFound';
 import Unauthorized from '../Pages/Unauthorized';
+import Discord from '../Pages/Discord';
 
 export const RequireAuth = (props: any) => {
   const { user, loading } = useAuthState();
@@ -73,6 +74,14 @@ const Router = () => {
           element={
             <RequireAuth>
               <Settings />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path='discord'
+          element={
+            <RequireAuth>
+              <Discord />
             </RequireAuth>
           }
         />

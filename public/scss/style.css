@@ -136,11 +136,6 @@ span {
     font-size: 1.5rem;
   }
 }
-:focus-visible {
-  outline: 0.2rem solid #18d8ff;
-  outline-offset: 0.2rem;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -243,10 +238,13 @@ a {
   height: 100vh;
   background-color: #bf98ff;
   top: -100vh;
-  transition: top 0.5s ease;
+  transition: top 0.5s ease, opacity 1s ease;
+  opacity: 0;
 }
 .nav-links.open {
   top: 0;
+  opacity: 1;
+  transition: top 0.5s ease, opacity 0s ease;
 }
 .nav-links .nav-link {
   color: #fff;

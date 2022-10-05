@@ -64,7 +64,7 @@ export const Settings = () => {
             marginTop: '1rem',
             gap: '1rem',
           }}>
-          <span>{displayEmail ? 'Hide' : 'Reveal'}</span>
+          <span>Reveal</span>
           <Switch bordered onChange={toggleShowEmail} checked={displayEmail} />
         </div>
         <Button
