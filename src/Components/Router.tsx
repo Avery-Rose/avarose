@@ -25,7 +25,8 @@ export const RequireAuth = (props: any) => {
         flexDirection: 'column',
         height: '100vh',
         width: '100vw',
-      }}>
+      }}
+    >
       <Loading />
     </main>
   ) : user ? (

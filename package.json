@@ -5,22 +5,17 @@
   "license": "MIT",
   "author": "Avery Rose Doucet",
   "source": "src/public/index.html",
-  "types": "dist/types.d.ts",
-  "module": "dist/module.js",
   "scripts": {
-    "preinstall": "npx only-allow yarn",
-    "postinstall": "pnpm run build",
-    "postuninstall": "pnpm run clean",
+    "postinstall": "npm run build",
+    "postuninstall": "npm run clean",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --config ./.prettierrc",
     "clean": "rimraf dist",
     "start": "parcel",
     "watch": "parcel watch",
-    "build": "pnpm run clean && pnpm run format && parcel build",
-    "serve": "pnpm run build && pnpm run start",
-    "install": "pnpm install",
-    "uninstall": "pnpm uninstall"
+    "build": "npm run clean && npm run format && parcel build",
+    "serve": "npm run build && npm run start"
   },
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.10",
