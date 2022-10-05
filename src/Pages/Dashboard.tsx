@@ -5,7 +5,7 @@ import Button from '@nextui-org/react/button';
 
 export const Dashboard = () => {
   const handleLogout = () => {
-    console.log('Logout');
+    
     signOut(getAuth());
   };
 
