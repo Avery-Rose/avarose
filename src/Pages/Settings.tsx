@@ -46,8 +46,7 @@ const Settings = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-        }}
-      >
+        }}>
         <Avatar src={avatar} style={{ width: 100, height: 100 }} />
         <h4 style={{ textAlign: 'center', marginTop: '1rem' }}>
           {user?.displayName}
@@ -57,8 +56,7 @@ const Settings = () => {
           style={{
             textAlign: 'center',
             marginTop: '0.5rem',
-          }}
-        >
+          }}>
           {email}
         </h5>
         <div
@@ -68,8 +66,7 @@ const Settings = () => {
             alignItems: 'center',
             marginTop: '1rem',
             gap: '1rem',
-          }}
-        >
+          }}>
           <span>Reveal</span>
           <Switch bordered onChange={toggleShowEmail} checked={displayEmail} />
         </div>
@@ -77,8 +74,7 @@ const Settings = () => {
           onClick={() => {
             signOut(getAuth());
           }}
-          style={{ marginTop: '1rem' }}
-        >
+          style={{ marginTop: '1rem' }}>
           Sign Out
         </Button>
       </Container>
@@ -88,8 +84,7 @@ const Settings = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-        }}
-      >
+        }}>
         {/* <FormControlLabel
           control={<Switch />}
           label='Dark Mode'
@@ -98,8 +93,7 @@ const Settings = () => {
         <h4
           style={{
             textAlign: 'center',
-          }}
-        >
+          }}>
           🚧 Under Construction 🚧
         </h4>
       </div>

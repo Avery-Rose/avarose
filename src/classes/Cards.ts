@@ -1,24 +1,6 @@
-export interface ICard {
-  id: number;
-  name: string;
-  body: string;
-}
-
-export interface ICardList {
-  cards: ICard[];
-}
-
-export class Card {
-  id: number;
-  name: string;
-  body: string;
-
-  constructor({ id, name, body }: ICard) {
-    this.id = id;
-    this.name = name;
-    this.body = body;
-  }
-}
+import { Card } from './Card';
+import { ICard } from '../interfaces/Card';
+import { ICardList } from '../interfaces/CardList';
 
 export class Cards {
   cards: Card[];
