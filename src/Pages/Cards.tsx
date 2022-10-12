@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Cards as CardList, Card } from '../types/card';
+import { Card } from '../classes/Card';
+import { Cards as CardList } from '../classes/Cards';
 
 const Cards = () => {
   const [cardsList, setCardsList] = useState<Card[]>([]);

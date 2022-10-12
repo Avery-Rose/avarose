@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --config ./.prettierrc",
     "clean": "rimraf dist",
     "start": "parcel",
+    "dev": "parcel",
     "watch": "parcel watch",
     "build": "npm run clean && npm run format && parcel build",
     "serve": "npm run build && npm run start"
