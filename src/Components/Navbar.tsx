@@ -33,16 +33,6 @@ const Pages: NavPage[] = [
     name: 'Home',
     reqAuthState: requiredAuthState.Any,
   },
-  // {
-  //   path: '/dashboard',
-  //   name: 'Dashboard',
-  //   reqAuthState: requiredAuthState.LoggedIn,
-  // },
-  {
-    path: '/settings',
-    name: 'Settings',
-    reqAuthState: requiredAuthState.LoggedIn,
-  },
   {
     path: '/discord',
     name: 'Discord',

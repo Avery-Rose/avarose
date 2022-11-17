@@ -25,8 +25,7 @@ export const RequireAuth = (props: any) => {
         flexDirection: 'column',
         height: '100vh',
         width: '100vw',
-      }}
-    >
+      }}>
       <Loading />
     </main>
   ) : user ? (
@@ -46,22 +45,7 @@ const Router = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route
-          path='/'
-          element={
-            <>
-              <Home />
-            </>
-          }
-        />
-        {/* <Route
-          path='/dashboard'
-          element={
-            <RequireAuth>
-              <Dashboard />
-            </RequireAuth>
-          }
-        /> */}
+        <Route path='/' element={<Home />} />
         <Route
           path='/unauthorized/'
           element={
@@ -70,23 +54,8 @@ const Router = () => {
             </RequireUnauth>
           }
         />
-        <Route
-          path='/settings'
-          element={
-            <RequireAuth>
-              <Settings />
-            </RequireAuth>
-          }
-        />
         <Route path='discord' element={<Discord />} />
-        <Route
-          path='/404'
-          element={
-            <>
-              <NotFound />
-            </>
-          }
-        />
+        <Route path='/404' element={<NotFound />} />
         <Route path='*' element={<Navigate to='/404' />} />
       </Routes>
     </BrowserRouter>
