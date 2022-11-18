@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const Home = () => {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
+    ReactGA.send({
+      hitType: 'pageview',
+      page: window.location.pathname,
+    });
   }, []);
 
   return (

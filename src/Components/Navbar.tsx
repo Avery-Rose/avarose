@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import {
   getAuth,
   GoogleAuthProvider,
@@ -48,9 +48,10 @@ const Buttons: NavButton[] = [
     action: () => {
       signInWithPopup(getAuth(), new GoogleAuthProvider());
 
-      ReactGA.event({
-        category: 'User',
-        action: 'Login',
+      ReactGA.send({
+        hitType: 'event',
+        eventCategory: 'Account',
+        eventAction: 'Login',
       });
     },
   },
@@ -62,9 +63,10 @@ const Buttons: NavButton[] = [
         if (func) func();
       });
 
-      ReactGA.event({
-        category: 'User',
-        action: 'Logout',
+      ReactGA.send({
+        hitType: 'event',
+        eventCategory: 'Account',
+        eventAction: 'Logout',
       });
     },
   },

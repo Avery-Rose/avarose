@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Loading from '@nextui-org/react/loading';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import './style.scss';
 
 const url = 'https://discord.com/api/guilds/1006583002517745674/widget.json',
@@ -22,7 +22,10 @@ const Discord = () => {
   const [discord, setDiscord] = React.useState<IDiscord | null>(null);
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
+    ReactGA.send({
+      hitType: 'pageview',
+      page: window.location.pathname,
+    });
     getDiscordData().then((data) => {
       setDiscord(data);
     });
