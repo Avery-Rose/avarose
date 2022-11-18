@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga4';
 
-const TRACKING_ID = 'G-2GE52FFSZ3';
+const TRACKING_ID = 'G-145KR80W1Q';
 ReactGA.initialize([
   {
     trackingId: TRACKING_ID,
