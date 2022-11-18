@@ -35,6 +35,17 @@ const Discord = () => {
     };
   }, []);
 
+  const clickInvite = () => {
+    ReactGA.send({
+      hitType: 'event',
+      category: 'Discord',
+      action: 'Click Invite',
+    });
+
+    window.open(discord.instant_invite, '_blank');
+    return;
+  };
+
   return (
     <main
       style={{
@@ -48,7 +59,7 @@ const Discord = () => {
           <h1>{discord.name}</h1>
           <div className='discord-list'>
             <div className='discord-list-header'>
-              <a href={discord.instant_invite} target='_blank' rel='noreferrer'>
+              <a onClick={clickInvite} rel='noreferrer'>
                 Join the Discord
               </a>
             </div>
