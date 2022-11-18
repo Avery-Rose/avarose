@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import {
   getAuth,
   GoogleAuthProvider,
@@ -46,6 +47,11 @@ const Buttons: NavButton[] = [
     reqAuthState: requiredAuthState.LoggedOut,
     action: () => {
       signInWithPopup(getAuth(), new GoogleAuthProvider());
+
+      ReactGA.event({
+        category: 'User',
+        action: 'Login',
+      });
     },
   },
   {
@@ -54,6 +60,11 @@ const Buttons: NavButton[] = [
     action: (func) => {
       signOut(getAuth()).then(() => {
         if (func) func();
+      });
+
+      ReactGA.event({
+        category: 'User',
+        action: 'Logout',
       });
     },
   },
