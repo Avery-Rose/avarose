@@ -36,10 +36,10 @@ const Discord = () => {
   }, []);
 
   const clickInvite = () => {
-    ReactGA.send({
-      hitType: 'event',
+    ReactGA.event({
       category: 'Discord',
       action: 'Click Invite',
+      label: 'Discord Invite',
     });
 
     window.open(discord.instant_invite, '_blank');

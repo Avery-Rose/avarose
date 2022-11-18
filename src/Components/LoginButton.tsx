@@ -15,10 +15,10 @@ export const LoginButton = ({ action, ...props }: LoginButtonProps) => {
       if (action) action();
     });
 
-    ReactGA.send({
-      hitType: 'event',
+    ReactGA.event({
       action: 'Login',
       category: 'Account',
+      label: 'Google Login',
     });
   };
 

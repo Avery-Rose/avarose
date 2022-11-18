@@ -14,10 +14,10 @@ export const LogoutButton = ({ action, ...props }: LogoutButtonProps) => {
       if (action) action();
     });
 
-    ReactGA.send({
-      hitType: 'event',
+    ReactGA.event({
       action: 'Logout',
       category: 'Account',
+      label: 'Google Logout',
     });
   };
 
