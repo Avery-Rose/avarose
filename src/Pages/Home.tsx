@@ -39,6 +39,10 @@ const Home = () => {
           </a>
           .
         </p>
+        <p>
+          You can find the repo for this website on{' '}
+          <a href='https://github.com/Avery-Rose/avarose.dev'>github</a>
+        </p>
       </section>
     </main>
   );
