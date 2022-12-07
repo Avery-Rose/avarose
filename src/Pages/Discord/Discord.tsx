@@ -57,27 +57,9 @@ const Discord = () => {
       {discord ? (
         <>
           <h1>{discord.name}</h1>
-          <div className='discord-list'>
-            <div className='discord-list-header'>
-              <a onClick={clickInvite} rel='noreferrer'>
-                Join the Discord
-              </a>
-            </div>
-            <div className='discord-list-body'>
-              {discord.members.map((member: any) => (
-                <div key={member.id} className='discord-list-member'>
-                  <img
-                    className='discord-list-member-avatar'
-                    src={member.avatar_url}
-                    alt={member.username}
-                  />
-                  <span className='discord-list-member-username'>
-                    {member.username}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <a onClick={clickInvite} rel='noreferrer'>
+            Join the Discord
+          </a>
         </>
       ) : (
         <Loading />
