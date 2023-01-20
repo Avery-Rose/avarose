@@ -53,7 +53,8 @@ const Discord = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-      }}>
+      }}
+    >
       {discord ? (
         <>
           <h1>{discord.name}</h1>

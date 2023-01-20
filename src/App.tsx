@@ -11,7 +11,7 @@ ReactGA.initialize([
 
 // Providers
 import AuthProvider from './Providers/AuthProvider';
-import Router from './Components/Router';
+import Router from './Components/Router/Router';
 
 export const App = () => {
   return (
