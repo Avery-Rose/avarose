@@ -12,11 +12,14 @@ ReactGA.initialize([
 // Providers
 import AuthProvider from './Providers/AuthProvider';
 import Router from './Components/Router/Router';
+import MuiWrapper from './Components/MUI/MUI';
 
 export const App = () => {
   return (
     <AuthProvider>
-      <Router />
+      <MuiWrapper>
+        <Router />
+      </MuiWrapper>
     </AuthProvider>
   );
 };

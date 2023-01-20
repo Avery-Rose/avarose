@@ -25,7 +25,7 @@ const Routes = [
     path: '/cats',
     name: 'Cats',
     component: Cats,
-    reqAuthState: RequiredAuthState.Any,
+    reqAuthState: RequiredAuthState.LoggedIn,
     hidden: true,
   },
   {

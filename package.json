@@ -13,11 +13,15 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --config ./.prettierrc",
     "clean": "rimraf dist",
     "start": "parcel",
+    "dev": "npm run clean && npm run format && parcel serve",
     "watch": "parcel watch",
     "build": "npm run clean && npm run format && parcel build",
     "serve": "npm run build && npm run start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.5",
     "@nextui-org/react": "^1.0.0-beta.10",
     "@parcel/transformer-sass": "^2.7.0",
     "firebase": "^9.10.0",

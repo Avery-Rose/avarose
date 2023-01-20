@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import { useAuthState } from '../../firebase/firebase';
@@ -28,7 +28,8 @@ export const RequireAuth = (props: any) => {
         flexDirection: 'column',
         height: '100vh',
         width: '100vw',
-      }}>
+      }}
+    >
       <Loading />
     </main>
   ) : user ? (
