@@ -4,7 +4,6 @@ import Home from '../../Pages/Home';
 import Discord from '../../Pages/Discord';
 import NotFound from '../../Pages/NotFound';
 import Unauthorized from '../../Pages/Unauthorized';
-import Cats from '../../Pages/Cats';
 
 const Routes = [
   {
@@ -20,13 +19,6 @@ const Routes = [
     component: Discord,
     reqAuthState: RequiredAuthState.Any,
     hidden: false,
-  },
-  {
-    path: '/cats',
-    name: 'Cats',
-    component: Cats,
-    reqAuthState: RequiredAuthState.LoggedIn,
-    hidden: true,
   },
   {
     path: '/unauthorized',
