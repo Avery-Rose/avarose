@@ -1,5 +1,4 @@
 import NavLink from '../models/NavLink';
-import NavPage from '../models/NavPage';
 import RequiredAuthState from '../types/RequiredAuthState';
 
 const Links: NavLink[] = [

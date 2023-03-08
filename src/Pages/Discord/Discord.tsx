@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Loading from '@nextui-org/react/loading';
 import ReactGA from 'react-ga4';
 import './style.scss';
-import { Alert, Skeleton, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 const url = 'https://discord.com/api/guilds/1006583002517745674/widget.json',
   getDiscordData = async () => {
