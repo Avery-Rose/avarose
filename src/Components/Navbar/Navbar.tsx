@@ -94,6 +94,7 @@ const Navbar = () => {
                     tabIndex={open ? 0 : -1}
                     onClick={handleLinkClick}
                     target={link.newPage ? '_blank' : ''}
+                    rel={link.newPage ? 'noopener noreferrer' : ''}
                   >
                     {link.label}
                   </a>
