@@ -14,6 +14,7 @@ const Buttons: NavButton[] = [
     action: () => {
       signInWithPopup(getAuth(), new GoogleAuthProvider());
     },
+    hidden: true,
   },
   {
     label: 'Logout',
@@ -23,6 +24,7 @@ const Buttons: NavButton[] = [
         if (func) func();
       });
     },
+    hidden: true,
   },
 ];
 

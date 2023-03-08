@@ -12,9 +12,11 @@ import Burger from '../Burger';
 import RequiredAuthState from './types/RequiredAuthState';
 import NavPage from './models/NavPage';
 import NavButton from './models/NavButton';
+import NavLink from './models/NavLink';
 
 import Pages from '../Router/Routes';
 import Buttons from './data/Buttons';
+import Links from './data/Links';
 
 const Navbar = () => {
   const { isAuthenticated } = useAuthState();
@@ -81,8 +83,26 @@ const Navbar = () => {
             }
             return null;
           })}
+          {Links.map((link: NavLink) => {
+            if (!link.hidden) {
+              return (
+                <li key={link.label}>
+                  <a
+                    href={link.url}
+                    className='nav-link'
+                    aria-hidden={open ? 'false' : 'true'}
+                    tabIndex={open ? 0 : -1}
+                    onClick={handleLinkClick}
+                    target={link.newPage ? '_blank' : ''}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            }
+          })}
           {Buttons.map((button: NavButton) => {
-            if (hasPermission(button.reqAuthState)) {
+            if (hasPermission(button.reqAuthState) && !button.hidden) {
               return (
                 <li key={button.label}>
                   <div className='nav-link'>

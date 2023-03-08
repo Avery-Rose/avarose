@@ -18,7 +18,7 @@ const Routes = [
     name: 'Discord',
     component: Discord,
     reqAuthState: RequiredAuthState.Any,
-    hidden: false,
+    hidden: true,
   },
   {
     path: '/unauthorized',
