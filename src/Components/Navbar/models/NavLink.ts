@@ -1,10 +1,11 @@
 import RequiredAuthState from '../types/RequiredAuthState';
 
-interface NavPage {
-  name: string;
-  path: string;
+interface NavLink {
+  label: string;
   reqAuthState: RequiredAuthState;
+  url: string;
+  newPage?: boolean;
   hidden?: boolean;
 }
 
-export default NavPage;
+export default NavLink;

@@ -6,12 +6,6 @@ import { useAuthState } from '../../firebase/firebase';
 // Components
 import Navbar from '../Navbar/Navbar';
 import Loading from '@nextui-org/react/loading';
-// Pages
-import Home from '../../Pages/Home';
-import Settings from '../../Pages/Settings';
-import NotFound from '../../Pages/NotFound';
-import Unauthorized from '../../Pages/Unauthorized';
-import Discord from '../../Pages/Discord';
 
 import RequiredAuthState from '../Navbar/types/RequiredAuthState';
 import RouterRoutes from './Routes';
@@ -28,7 +22,8 @@ export const RequireAuth = (props: any) => {
         flexDirection: 'column',
         height: '100vh',
         width: '100vw',
-      }}>
+      }}
+    >
       <Loading />
     </main>
   ) : user ? (
