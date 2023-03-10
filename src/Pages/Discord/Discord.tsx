@@ -52,8 +52,6 @@ const Discord = () => {
       action: 'Click Invite',
       label: 'Discord Invite',
     });
-
-    window.open(discord.instant_invite, '_blank');
     return;
   };
 
@@ -69,14 +67,33 @@ const Discord = () => {
       {discord ? (
         <>
           <h1>{discord.name}</h1>
-          <a onClick={clickInvite} rel='noreferrer'>
+          <a
+            onClick={clickInvite}
+            href={discord.instant_invite}
+            rel='noreferrer'
+            target='_blank'
+          >
             Join the Discord
           </a>
         </>
       ) : error ? (
-        <Typography variant='h3' color='error'>
-          {error.message}
-        </Typography>
+        <>
+          <Typography variant='h3' color='error'>
+            {error.message}
+          </Typography>
+
+          <Typography
+            variant='h6'
+            color='error'
+            style={{
+              position: 'absolute',
+              bottom: 0,
+            }}
+          >
+            *Try disabling your adblocker or any other extensions that may be
+            blocking the request.
+          </Typography>
+        </>
       ) : (
         <Loading />
       )}
