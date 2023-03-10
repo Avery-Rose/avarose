@@ -52,8 +52,6 @@ const Discord = () => {
       action: 'Click Invite',
       label: 'Discord Invite',
     });
-
-    window.open(discord.instant_invite, '_blank');
     return;
   };
 
@@ -69,7 +67,12 @@ const Discord = () => {
       {discord ? (
         <>
           <h1>{discord.name}</h1>
-          <a onClick={clickInvite} rel='noreferrer'>
+          <a
+            onClick={clickInvite}
+            href={discord.instant_invite}
+            rel='noreferrer'
+            target='_blank'
+          >
             Join the Discord
           </a>
         </>
