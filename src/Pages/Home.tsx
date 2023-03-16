@@ -11,7 +11,7 @@ const Home = () => {
 
     seo({
       title: 'AvaRose',
-      description: "Avery Rose's personal website",
+      metaDescription: "Avery Rose's personal website",
     });
   }, []);
 
