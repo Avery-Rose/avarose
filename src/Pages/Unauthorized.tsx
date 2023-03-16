@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { seo } from '../Helpers/seo';
 
 const Unauthorized = () => {
+  useEffect(() => {
+    seo({
+      title: 'AvaRose - Unauthorized',
+      metaDescription: 'Unauthorized',
+    });
+  }, []);
+
   return (
     <main
       className='fill-W fill-H'

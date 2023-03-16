@@ -43,25 +43,27 @@ const Router = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        {RouterRoutes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={
-              route.reqAuthState === RequiredAuthState.LoggedIn ? (
-                <RequireAuth>
+        {RouterRoutes.map((route) => {
+          return (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={
+                route.reqAuthState === RequiredAuthState.LoggedIn ? (
+                  <RequireAuth>
+                    <route.component />
+                  </RequireAuth>
+                ) : route.reqAuthState === RequiredAuthState.LoggedOut ? (
+                  <RequireUnauth>
+                    <route.component />
+                  </RequireUnauth>
+                ) : (
                   <route.component />
-                </RequireAuth>
-              ) : route.reqAuthState === RequiredAuthState.LoggedOut ? (
-                <RequireUnauth>
-                  <route.component />
-                </RequireUnauth>
-              ) : (
-                <route.component />
-              )
-            }
-          />
-        ))}
+                )
+              }
+            />
+          );
+        })}
         <Route path='*' element={<Navigate to='/404' />} />
       </Routes>
     </BrowserRouter>

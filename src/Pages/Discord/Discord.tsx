@@ -34,7 +34,7 @@ const Discord = () => {
     });
 
     seo({
-      title: 'Discord',
+      title: 'AvaRose - Discord',
       metaDescription: 'Join the Discord',
     });
 

@@ -10,7 +10,7 @@ const Home = () => {
     });
 
     seo({
-      title: 'AvaRose',
+      title: 'AvaRose - Home',
       metaDescription: "Avery Rose's personal website",
     });
   }, []);

@@ -7,6 +7,8 @@ import Unauthorized from '../../Pages/Unauthorized';
 
 const Routes = [
   {
+    title: 'AvaRose - Home',
+    description: "Avery Rose's personal website",
     path: '/',
     name: 'Home',
     component: Home,
@@ -14,6 +16,8 @@ const Routes = [
     hidden: false,
   },
   {
+    title: 'AvaRose - Discord',
+    description: "Avery Rose's Discord Server",
     path: '/discord',
     name: 'Discord',
     component: Discord,
@@ -21,6 +25,8 @@ const Routes = [
     hidden: true,
   },
   {
+    title: 'AvaRose - Unauthorized',
+    description: 'Unauthorized',
     path: '/unauthorized',
     name: 'Unauthorized',
     component: Unauthorized,
@@ -28,6 +34,8 @@ const Routes = [
     hidden: true,
   },
   {
+    title: 'AvaRose - 404',
+    description: 'Page Not Found',
     path: '/404',
     name: '404',
     component: NotFound,
