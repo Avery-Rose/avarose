@@ -3,6 +3,7 @@ import Loading from '@nextui-org/react/loading';
 import ReactGA from 'react-ga4';
 import './style.scss';
 import { Typography } from '@mui/material';
+import { seo, SeoData } from '../../Helpers/seo';
 
 const url = 'https://discord.com/api/guilds/1006583002517745674/widget.json',
   getDiscordData = async () => {
@@ -30,6 +31,11 @@ const Discord = () => {
     ReactGA.send({
       hitType: 'pageview',
       page: window.location.pathname,
+    });
+
+    seo({
+      title: 'Discord',
+      metaDescription: 'Join the Discord',
     });
 
     getDiscordData()
