@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import Loading from '@nextui-org/react/loading';
 import ReactGA from 'react-ga4';
 import './style.scss';
-import { Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { seo, SeoData } from '../../Helpers/seo';
+import { Banner } from './banner';
 
 const url = 'https://discord.com/api/guilds/1006583002517745674/widget.json',
   getDiscordData = async () => {
@@ -70,6 +71,9 @@ const Discord = () => {
         flexDirection: 'column',
       }}
     >
+      <Container maxWidth='md'>
+        <Banner />
+      </Container>
       {discord ? (
         <>
           <h1>{discord.name}</h1>
@@ -87,7 +91,6 @@ const Discord = () => {
           <Typography variant='h3' color='error'>
             {error.message}
           </Typography>
-
           <Typography
             variant='h6'
             color='error'
