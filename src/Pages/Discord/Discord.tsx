@@ -4,7 +4,6 @@ import ReactGA from 'react-ga4';
 import './style.scss';
 import { Container, Typography } from '@mui/material';
 import { seo, SeoData } from '../../Helpers/seo';
-import { Banner } from './Banner';
 
 const url = 'https://discord.com/api/guilds/1006583002517745674/widget.json',
   getDiscordData = async () => {
@@ -71,9 +70,6 @@ const Discord = () => {
         flexDirection: 'column',
       }}
     >
-      <Container maxWidth='md'>
-        <Banner />
-      </Container>
       {discord ? (
         <>
           <h1>{discord.name}</h1>
