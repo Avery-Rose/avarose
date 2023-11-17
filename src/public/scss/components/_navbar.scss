@@ -17,14 +17,18 @@
   background-color: colors.$background;
 
   top: -100vh;
-  transition: top 0.5s ease, opacity 1s ease;
+  transition:
+    top 0.5s ease,
+    opacity 1s ease;
 
   opacity: 0;
 
   &.open {
     top: 0;
     opacity: 1;
-    transition: top 0.5s ease, opacity 0s ease;
+    transition:
+      top 0.5s ease,
+      opacity 0s ease;
   }
 
   .nav-link {
