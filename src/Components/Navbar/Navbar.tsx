@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-} from 'firebase/auth';
+// Login with Google
+// import {
+//   getAuth,
+//   GoogleAuthProvider,
+//   signInWithPopup,
+//   signOut,
+// } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { useAuthState } from '../../firebase/firebase';
 import Burger from '../Burger';

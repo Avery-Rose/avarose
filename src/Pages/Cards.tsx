@@ -114,7 +114,7 @@ const Cards = () => {
         Add Card
       </button>
       <div className='cards'>
-        {cardsList.map((card: Card, i) => (
+        {cardsList.map((card: Card) => (
           <div className='card' id={`card-${card.id}`} key={card.id}>
             <div className='card-border' />
             <div className='card-content'>

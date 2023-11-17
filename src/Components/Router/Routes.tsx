@@ -4,6 +4,7 @@ import Home from '../../Pages/Home';
 import Discord from '../../Pages/Discord';
 import NotFound from '../../Pages/NotFound';
 import Unauthorized from '../../Pages/Unauthorized';
+import Cards from '../../Pages/Cards';
 
 const Routes = [
   {
@@ -31,6 +32,15 @@ const Routes = [
     name: 'Unauthorized',
     component: Unauthorized,
     reqAuthState: RequiredAuthState.LoggedOut,
+    hidden: true,
+  },
+  {
+    title: 'Cards',
+    description: 'Cards',
+    path: '/cards',
+    name: 'Cards',
+    component: Cards,
+    reqAuthState: RequiredAuthState.Any,
     hidden: true,
   },
   {

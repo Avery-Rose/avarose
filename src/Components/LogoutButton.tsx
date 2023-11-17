@@ -8,7 +8,7 @@ interface LogoutButtonProps {
   props?: any;
 }
 
-export const LogoutButton = ({ action, ...props }: LogoutButtonProps) => {
+export const LogoutButton = ({ action }: LogoutButtonProps) => {
   const handleLogout = () => {
     signOut(getAuth()).then(() => {
       if (action) action();
