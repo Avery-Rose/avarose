@@ -39,14 +39,7 @@ const Home = () => {
         }}
       >
         <h2>🎉 Welcome to my website 👋</h2>
-        <p>
-          My name is Avery and I am a College Student at{' '}
-          <a href='https://nbcc.ca/'>NBCC</a>. I am currently in my 2nd year of{' '}
-          <a href='https://nbcc.ca/programs-courses/program-details?baseCurriculumId=a3dc93ce-e29b-49e5-bf3c-d5374530e205'>
-            Web and Mobile Application Development
-          </a>
-          .
-        </p>
+        <p>My name is Ava and I am a College Student.</p>
         <p>
           You can find the repo for this website on{' '}
           <a href='https://github.com/Avery-Rose/avarose.dev'>github</a>
