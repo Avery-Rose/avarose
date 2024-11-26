@@ -1,7 +1,6 @@
 import RequiredAuthState from '../Navbar/types/RequiredAuthState';
 
 import Home from '../../Pages/Home';
-import Discord from '../../Pages/Discord';
 import NotFound from '../../Pages/NotFound';
 import Unauthorized from '../../Pages/Unauthorized';
 import Cards from '../../Pages/Cards';
@@ -15,15 +14,6 @@ const Routes = [
     component: Home,
     reqAuthState: RequiredAuthState.Any,
     hidden: false,
-  },
-  {
-    title: 'AvaRose - Discord',
-    description: "Avery Rose's Discord Server",
-    path: '/discord',
-    name: 'Discord',
-    component: Discord,
-    reqAuthState: RequiredAuthState.Any,
-    hidden: true,
   },
   {
     title: 'AvaRose - Unauthorized',
